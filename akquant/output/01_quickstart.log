@@ -1,0 +1,104 @@
+2026-09-20 17:11:22 | INFO | akquant.backtest | Running backtest via run_backtest()...
+BacktestResult:
+                                            Value
+name                                             
+start_time              2025-01-02 00:00:00+08:00
+end_time                2025-01-03 00:00:00+08:00
+duration                           1 day, 0:00:00
+total_bars                                      2
+closed_trade_count                            0.0
+execution_count                               3.0
+open_position_count                           3.0
+initial_market_value                    5000000.0
+end_market_value                       4870549.04
+total_pnl                              -129450.96
+unrealized_pnl                         -129435.96
+total_return_pct                        -2.589019
+annualized_return                       -0.999931
+volatility                                    0.0
+total_profit                                  0.0
+total_loss                                    0.0
+total_commission                             15.0
+max_drawdown                              0.02589
+max_drawdown_value                      129450.96
+max_drawdown_pct                         2.589019
+win_rate                                      0.0
+loss_rate                                     0.0
+winning_trades                                0.0
+losing_trades                                 0.0
+avg_pnl                                       0.0
+avg_return_pct                                0.0
+avg_trade_bars                                0.0
+avg_profit                                    0.0
+avg_profit_pct                                0.0
+avg_winning_trade_bars                        0.0
+avg_loss                                      0.0
+avg_loss_pct                                  0.0
+avg_losing_trade_bars                         0.0
+largest_win                                   0.0
+largest_win_pct                               0.0
+largest_win_bars                              0.0
+largest_loss                                  0.0
+largest_loss_pct                              0.0
+largest_loss_bars                             0.0
+max_wins                                      0.0
+max_losses                                    0.0
+sharpe_ratio                                  0.0
+sortino_ratio                          -15.874508
+profit_factor                                 0.0
+ulcer_index                              0.018307
+upi                                     -54.61973
+equity_r2                                     1.0
+std_error                                     0.0
+calmar_ratio                           -38.621981
+exposure_time_pct                           100.0
+var_95                                   -0.02589
+var_99                                   -0.02589
+cvar_95                                  -0.02589
+cvar_99                                  -0.02589
+sqn                                           0.0
+kelly_criterion                               0.0
+max_leverage                             0.985033
+min_margin_level                         1.015194
+                                     id  symbol side order_type  quantity  \
+0  392afb75-cd4e-4e4c-ac89-12817db52050  600000  buy     market  162882.0   
+1  7014031c-6c6c-4573-a6e2-6396b9502a7e  600004  buy     market  176470.0   
+2  b17851bc-e22c-4221-908d-9d779af89515  600006  buy     market  221774.0   
+
+   filled_quantity  limit_price  stop_price  avg_price  commission  status  \
+0         162882.0          NaN         NaN      10.12         5.0  filled   
+1         176470.0          NaN         NaN       9.33         5.0  filled   
+2         221774.0          NaN         NaN       7.36         5.0  filled   
+
+  time_in_force                created_at                updated_at tag  \
+0           gtc 2025-01-02 00:00:00+08:00 2025-01-03 00:00:00+08:00       
+1           gtc 2025-01-02 00:00:00+08:00 2025-01-03 00:00:00+08:00       
+2           gtc 2025-01-02 00:00:00+08:00 2025-01-03 00:00:00+08:00       
+
+  reject_reason position_effect  reduce_only        created_at_iso  \
+0                          open        False  2025-01-01T16:00:00Z   
+1                          open        False  2025-01-01T16:00:00Z   
+2                          open        False  2025-01-01T16:00:00Z   
+
+         updated_at_iso owner_strategy_id  filled_value duration  
+0  2025-01-02T16:00:00Z          _default    1648365.84   1 days  
+1  2025-01-02T16:00:00Z          _default    1646465.10   1 days  
+2  2025-01-02T16:00:00Z          _default    1632256.64   1 days  
+liquidation_audit_df is empty
+stream_events=24
+
+--- Manual Verification ---
+Total Return % (Manual): -2.589019%
+Total Return % (Rust):   -2.589019%
+Annualized Return (Manual): -0.999931
+Annualized Return (Rust):   -0.999931
+Volatility (Manual): nan
+Volatility (Rust):   0.000000
+Max Drawdown (Manual): -129450.960000
+Max Drawdown (Rust):   -129450.960000
+Max Drawdown % (Manual): -2.589019%
+Max Drawdown % (Rust):   -2.589019%
+R2 (Manual):        1.000000
+R2 (Rust):          1.000000
+Std Error (Manual): 0.000000
+Std Error (Rust):   0.000000

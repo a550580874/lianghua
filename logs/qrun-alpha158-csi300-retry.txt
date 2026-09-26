@@ -1,0 +1,350 @@
+[98614:MainThread](2026-09-18 15:06:00,280) INFO - qlib.qrun - [run.py:78] - Render the template with the context: {}
+[98614:MainThread](2026-09-18 15:06:00,285) INFO - qlib.Initialization - [config.py:452] - default_conf: client.
+[98614:MainThread](2026-09-18 15:06:00,286) INFO - qlib.Initialization - [__init__.py:75] - qlib successfully initialized based on client settings.
+[98614:MainThread](2026-09-18 15:06:00,286) INFO - qlib.Initialization - [__init__.py:77] - data_path={'__DEFAULT_FREQ': PosixPath('/Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/data/cn_data')}
+[98614:MainThread](2026-09-18 15:06:00,291) WARNING - qlib.workflow - [expm.py:231] - No valid experiment found. Create a new experiment with name workflow.
+[98614:MainThread](2026-09-18 15:06:00,292) INFO - qlib.workflow - [exp.py:258] - Experiment 177328310224783065 starts running ...
+[98614:MainThread](2026-09-18 15:06:00,426) INFO - qlib.workflow - [recorder.py:345] - Recorder f94e39e8eec04ae6a68c64f301f43c56 starts running under Experiment 177328310224783065 ...
+warning: Not a git repository. Use --no-index to compare two paths outside a working tree
+usage: git diff --no-index [<options>] <path> <path>
+
+Diff output format options
+    -p, --patch           generate patch
+    -s, --no-patch        suppress diff output
+    -u                    generate patch
+    -U, --unified[=<n>]   generate diffs with <n> lines context
+    -W, --[no-]function-context
+                          generate diffs with <n> lines context
+    --raw                 generate the diff in raw format
+    --patch-with-raw      synonym for '-p --raw'
+    --patch-with-stat     synonym for '-p --stat'
+    --numstat             machine friendly --stat
+    --shortstat           output only the last line of --stat
+    -X, --dirstat[=<param1>,<param2>...]
+                          output the distribution of relative amount of changes for each sub-directory
+    --cumulative          synonym for --dirstat=cumulative
+    --dirstat-by-file[=<param1>,<param2>...]
+                          synonym for --dirstat=files,<param1>,<param2>...
+    --check               warn if changes introduce conflict markers or whitespace errors
+    --summary             condensed summary such as creations, renames and mode changes
+    --name-only           show only names of changed files
+    --name-status         show only names and status of changed files
+    --stat[=<width>[,<name-width>[,<count>]]]
+                          generate diffstat
+    --stat-width <width>  generate diffstat with a given width
+    --stat-name-width <width>
+                          generate diffstat with a given name width
+    --stat-graph-width <width>
+                          generate diffstat with a given graph width
+    --stat-count <count>  generate diffstat with limited lines
+    --[no-]compact-summary
+                          generate compact summary in diffstat
+    --binary              output a binary diff that can be applied
+    --[no-]full-index     show full pre- and post-image object names on the "index" lines
+    --[no-]color[=<when>] show colored diff
+    --ws-error-highlight <kind>
+                          highlight whitespace errors in the 'context', 'old' or 'new' lines in the diff
+    -z                    do not munge pathnames and use NULs as output field terminators in --raw or --numstat
+    --[no-]abbrev[=<n>]   use <n> digits to display object names
+    --src-prefix <prefix> show the given source prefix instead of "a/"
+    --dst-prefix <prefix> show the given destination prefix instead of "b/"
+    --line-prefix <prefix>
+                          prepend an additional prefix to every line of output
+    --no-prefix           do not show any source or destination prefix
+    --default-prefix      use default prefixes a/ and b/
+    --inter-hunk-context <n>
+                          show context between diff hunks up to the specified number of lines
+    --output-indicator-new <char>
+                          specify the character to indicate a new line instead of '+'
+    --output-indicator-old <char>
+                          specify the character to indicate an old line instead of '-'
+    --output-indicator-context <char>
+                          specify the character to indicate a context instead of ' '
+
+Diff rename options
+    -B, --break-rewrites[=<n>[/<m>]]
+                          break complete rewrite changes into pairs of delete and create
+    -M, --find-renames[=<n>]
+                          detect renames
+    -D, --irreversible-delete
+                          omit the preimage for deletes
+    -C, --find-copies[=<n>]
+                          detect copies
+    --[no-]find-copies-harder
+                          use unmodified files as source to find copies
+    --no-renames          disable rename detection
+    --[no-]rename-empty   use empty blobs as rename source
+    --[no-]follow         continue listing the history of a file beyond renames
+    -l <n>                prevent rename/copy detection if the number of rename/copy targets exceeds given limit
+
+Diff algorithm options
+    --minimal             produce the smallest possible diff
+    -w, --ignore-all-space
+                          ignore whitespace when comparing lines
+    -b, --ignore-space-change
+                          ignore changes in amount of whitespace
+    --ignore-space-at-eol ignore changes in whitespace at EOL
+    --ignore-cr-at-eol    ignore carrier-return at the end of line
+    --ignore-blank-lines  ignore changes whose lines are all blank
+    -I, --[no-]ignore-matching-lines <regex>
+                          ignore changes whose all lines match <regex>
+    --[no-]indent-heuristic
+                          heuristic to shift diff hunk boundaries for easy reading
+    --patience            generate diff using the "patience diff" algorithm
+    --histogram           generate diff using the "histogram diff" algorithm
+    --diff-algorithm <algorithm>
+                          choose a diff algorithm
+    --anchored <text>     generate diff using the "anchored diff" algorithm
+    --word-diff[=<mode>]  show word diff, using <mode> to delimit changed words
+    --word-diff-regex <regex>
+                          use <regex> to decide what a word is
+    --color-words[=<regex>]
+                          equivalent to --word-diff=color --word-diff-regex=<regex>
+    --[no-]color-moved[=<mode>]
+                          moved lines of code are colored differently
+    --[no-]color-moved-ws <mode>
+                          how white spaces are ignored in --color-moved
+
+Other diff options
+    --[no-]relative[=<prefix>]
+                          when run from subdir, exclude changes outside and show relative paths
+    -a, --[no-]text       treat all files as text
+    -R                    swap two inputs, reverse the diff
+    --[no-]exit-code      exit with 1 if there were differences, 0 otherwise
+    --[no-]quiet          disable all output of the program
+    --[no-]ext-diff       allow an external diff helper to be executed
+    --[no-]textconv       run external text conversion filters when comparing binary files
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules in the diff generation
+    --submodule[=<format>]
+                          specify how differences in submodules are shown
+    --ita-invisible-in-index
+                          hide 'git add -N' entries from the index
+    --ita-visible-in-index
+                          treat 'git add -N' entries as real in the index
+    -S <string>           look for differences that change the number of occurrences of the specified string
+    -G <regex>            look for differences that change the number of occurrences of the specified regex
+    --pickaxe-all         show all changes in the changeset with -S or -G
+    --pickaxe-regex       treat <string> in -S as extended POSIX regular expression
+    -O <file>             control the order in which files appear in the output
+    --rotate-to <path>    show the change in the specified path first
+    --skip-to <path>      skip the output to the specified path
+    --find-object <object-id>
+                          look for differences that change the number of occurrences of the specified object
+    --diff-filter [(A|C|D|M|R|T|U|X|B)...[*]]
+                          select files by diff type
+    --output <file>       output to a specific file
+
+[98614:MainThread](2026-09-18 15:06:00,436) INFO - qlib.workflow - [recorder.py:378] - Fail to log the uncommitted code of $CWD(/Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc) when run git diff.
+fatal: not a git repository (or any of the parent directories): .git
+[98614:MainThread](2026-09-18 15:06:00,445) INFO - qlib.workflow - [recorder.py:378] - Fail to log the uncommitted code of $CWD(/Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc) when run git status.
+error: unknown option `cached'
+usage: git diff --no-index [<options>] <path> <path>
+
+Diff output format options
+    -p, --patch           generate patch
+    -s, --no-patch        suppress diff output
+    -u                    generate patch
+    -U, --unified[=<n>]   generate diffs with <n> lines context
+    -W, --[no-]function-context
+                          generate diffs with <n> lines context
+    --raw                 generate the diff in raw format
+    --patch-with-raw      synonym for '-p --raw'
+    --patch-with-stat     synonym for '-p --stat'
+    --numstat             machine friendly --stat
+    --shortstat           output only the last line of --stat
+    -X, --dirstat[=<param1>,<param2>...]
+                          output the distribution of relative amount of changes for each sub-directory
+    --cumulative          synonym for --dirstat=cumulative
+    --dirstat-by-file[=<param1>,<param2>...]
+                          synonym for --dirstat=files,<param1>,<param2>...
+    --check               warn if changes introduce conflict markers or whitespace errors
+    --summary             condensed summary such as creations, renames and mode changes
+    --name-only           show only names of changed files
+    --name-status         show only names and status of changed files
+    --stat[=<width>[,<name-width>[,<count>]]]
+                          generate diffstat
+    --stat-width <width>  generate diffstat with a given width
+    --stat-name-width <width>
+                          generate diffstat with a given name width
+    --stat-graph-width <width>
+                          generate diffstat with a given graph width
+    --stat-count <count>  generate diffstat with limited lines
+    --[no-]compact-summary
+                          generate compact summary in diffstat
+    --binary              output a binary diff that can be applied
+    --[no-]full-index     show full pre- and post-image object names on the "index" lines
+    --[no-]color[=<when>] show colored diff
+    --ws-error-highlight <kind>
+                          highlight whitespace errors in the 'context', 'old' or 'new' lines in the diff
+    -z                    do not munge pathnames and use NULs as output field terminators in --raw or --numstat
+    --[no-]abbrev[=<n>]   use <n> digits to display object names
+    --src-prefix <prefix> show the given source prefix instead of "a/"
+    --dst-prefix <prefix> show the given destination prefix instead of "b/"
+    --line-prefix <prefix>
+                          prepend an additional prefix to every line of output
+    --no-prefix           do not show any source or destination prefix
+    --default-prefix      use default prefixes a/ and b/
+    --inter-hunk-context <n>
+                          show context between diff hunks up to the specified number of lines
+    --output-indicator-new <char>
+                          specify the character to indicate a new line instead of '+'
+    --output-indicator-old <char>
+                          specify the character to indicate an old line instead of '-'
+    --output-indicator-context <char>
+                          specify the character to indicate a context instead of ' '
+
+Diff rename options
+    -B, --break-rewrites[=<n>[/<m>]]
+                          break complete rewrite changes into pairs of delete and create
+    -M, --find-renames[=<n>]
+                          detect renames
+    -D, --irreversible-delete
+                          omit the preimage for deletes
+    -C, --find-copies[=<n>]
+                          detect copies
+    --[no-]find-copies-harder
+                          use unmodified files as source to find copies
+    --no-renames          disable rename detection
+    --[no-]rename-empty   use empty blobs as rename source
+    --[no-]follow         continue listing the history of a file beyond renames
+    -l <n>                prevent rename/copy detection if the number of rename/copy targets exceeds given limit
+
+Diff algorithm options
+    --minimal             produce the smallest possible diff
+    -w, --ignore-all-space
+                          ignore whitespace when comparing lines
+    -b, --ignore-space-change
+                          ignore changes in amount of whitespace
+    --ignore-space-at-eol ignore changes in whitespace at EOL
+    --ignore-cr-at-eol    ignore carrier-return at the end of line
+    --ignore-blank-lines  ignore changes whose lines are all blank
+    -I, --[no-]ignore-matching-lines <regex>
+                          ignore changes whose all lines match <regex>
+    --[no-]indent-heuristic
+                          heuristic to shift diff hunk boundaries for easy reading
+    --patience            generate diff using the "patience diff" algorithm
+    --histogram           generate diff using the "histogram diff" algorithm
+    --diff-algorithm <algorithm>
+                          choose a diff algorithm
+    --anchored <text>     generate diff using the "anchored diff" algorithm
+    --word-diff[=<mode>]  show word diff, using <mode> to delimit changed words
+    --word-diff-regex <regex>
+                          use <regex> to decide what a word is
+    --color-words[=<regex>]
+                          equivalent to --word-diff=color --word-diff-regex=<regex>
+    --[no-]color-moved[=<mode>]
+                          moved lines of code are colored differently
+    --[no-]color-moved-ws <mode>
+                          how white spaces are ignored in --color-moved
+
+Other diff options
+    --[no-]relative[=<prefix>]
+                          when run from subdir, exclude changes outside and show relative paths
+    -a, --[no-]text       treat all files as text
+    -R                    swap two inputs, reverse the diff
+    --[no-]exit-code      exit with 1 if there were differences, 0 otherwise
+    --[no-]quiet          disable all output of the program
+    --[no-]ext-diff       allow an external diff helper to be executed
+    --[no-]textconv       run external text conversion filters when comparing binary files
+    --ignore-submodules[=<when>]
+                          ignore changes to submodules in the diff generation
+    --submodule[=<format>]
+                          specify how differences in submodules are shown
+    --ita-invisible-in-index
+                          hide 'git add -N' entries from the index
+    --ita-visible-in-index
+                          treat 'git add -N' entries as real in the index
+    -S <string>           look for differences that change the number of occurrences of the specified string
+    -G <regex>            look for differences that change the number of occurrences of the specified regex
+    --pickaxe-all         show all changes in the changeset with -S or -G
+    --pickaxe-regex       treat <string> in -S as extended POSIX regular expression
+    -O <file>             control the order in which files appear in the output
+    --rotate-to <path>    show the change in the specified path first
+    --skip-to <path>      skip the output to the specified path
+    --find-object <object-id>
+                          look for differences that change the number of occurrences of the specified object
+    --diff-filter [(A|C|D|M|R|T|U|X|B)...[*]]
+                          select files by diff type
+    --output <file>       output to a specific file
+
+[98614:MainThread](2026-09-18 15:06:00,454) INFO - qlib.workflow - [recorder.py:378] - Fail to log the uncommitted code of $CWD(/Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc) when run git diff --cached.
+ModuleNotFoundError. CatBoostModel are skipped. (optional: maybe installing CatBoostModel can fix it.)
+ModuleNotFoundError. XGBModel is skipped(optional: maybe installing xgboost can fix it).
+ModuleNotFoundError.  PyTorch models are skipped (optional: maybe installing pytorch can fix it).
+[98614:MainThread](2026-09-18 15:06:17,374) INFO - qlib.timer - [log.py:127] - Time cost: 15.643s | Loading data Done
+[98614:MainThread](2026-09-18 15:06:18,054) INFO - qlib.timer - [log.py:127] - Time cost: 0.157s | DropnaLabel Done
+[98614:MainThread](2026-09-18 15:06:19,298) INFO - qlib.timer - [log.py:127] - Time cost: 1.244s | CSZScoreNorm Done
+[98614:MainThread](2026-09-18 15:06:19,304) INFO - qlib.timer - [log.py:127] - Time cost: 1.930s | fit & process data Done
+[98614:MainThread](2026-09-18 15:06:19,304) INFO - qlib.timer - [log.py:127] - Time cost: 17.574s | Init data Done
+[98614:MainThread](2026-09-18 15:06:25,575) INFO - qlib.fill_placeholder - [__init__.py:798] - <PRED> lookes like a placeholder, but it can't match to any given values
+Gym has been unmaintained since 2022 and does not support NumPy 2.0 amongst other critical functionality.
+Please upgrade to Gymnasium, the maintained drop-in replacement of Gym, or contact the authors of your software and request that they upgrade.
+Users of this version of Gym should be able to simply replace 'import gym' with 'import gymnasium as gym' in the vast majority of cases.
+See the migration guide at https://gymnasium.farama.org/introduction/migration_guide/ for additional information.
+[98614:MainThread](2026-09-18 15:06:25,786) INFO - qlib.workflow - [record_temp.py:198] - Signal record 'pred.pkl' has been saved as the artifact of the Experiment 177328310224783065
+Training until validation scores don't improve for 50 rounds
+[20]	train's l2: 0.980649	valid's l2: 0.99354
+[40]	train's l2: 0.973247	valid's l2: 0.993565
+[60]	train's l2: 0.966612	valid's l2: 0.994176
+[80]	train's l2: 0.960574	valid's l2: 0.994592
+Early stopping, best iteration is:
+[32]	train's l2: 0.976073	valid's l2: 0.993445
+'The following are prediction results of the LGBModel model.'
+                          score
+datetime   instrument          
+2017-01-03 SH600000   -0.013916
+           SH600008   -0.009906
+           SH600009    0.029725
+           SH600010   -0.016550
+           SH600015   -0.138893
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]Downloading artifacts: 100%|██████████| 1/1 [00:00<00:00, 436.72it/s]Downloading artifacts: 100%|██████████| 1/1 [00:00<00:00, 427.38it/s]
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]Downloading artifacts: 100%|██████████| 1/1 [00:00<00:00, 611.59it/s]Downloading artifacts: 100%|██████████| 1/1 [00:00<00:00, 599.87it/s]
+{'IC': np.float64(0.049990067839553246),
+ 'ICIR': np.float64(0.4164238169477791),
+ 'Rank IC': np.float64(0.052289957814358454),
+ 'Rank ICIR': np.float64(0.4504209123563893)}
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]
+Downloading artifacts:   0%|          | 0/1 [00:00<?, ?it/s]Downloading artifacts: 100%|██████████| 1/1 [00:00<00:00, 213.85it/s]Downloading artifacts: 100%|██████████| 1/1 [00:00<00:00, 211.64it/s]
+[98614:MainThread](2026-09-18 15:06:26,143) INFO - qlib.backtest caller - [__init__.py:93] - Create new exchange
+[98614:MainThread](2026-09-18 15:06:28,939) WARNING - qlib.online operator - [exchange.py:219] - $close field data contains nan.
+[98614:MainThread](2026-09-18 15:06:28,939) WARNING - qlib.online operator - [exchange.py:219] - $close field data contains nan.
+[98614:MainThread](2026-09-18 15:06:32,644) WARNING - qlib.BaseExecutor - [executor.py:121] - `common_infra` is not set for <qlib.backtest.executor.SimulatorExecutor object at 0x146b1e5a0>
+backtest loop:   0%|          | 0/871 [00:00<?, ?it/s]/Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/.venv/lib/python3.12/site-packages/qlib/utils/index_data.py:492: RuntimeWarning: Mean of empty slice
+  return np.nanmean(self.data)
+backtest loop:   3%|▎         | 24/871 [00:00<00:03, 231.33it/s]backtest loop:   6%|▌         | 54/871 [00:00<00:03, 262.67it/s]backtest loop:   9%|▉         | 81/871 [00:00<00:02, 264.54it/s]backtest loop:  13%|█▎        | 109/871 [00:00<00:02, 264.87it/s]backtest loop:  16%|█▌        | 136/871 [00:00<00:02, 265.68it/s]backtest loop:  19%|█▉        | 164/871 [00:00<00:02, 269.67it/s]backtest loop:  22%|██▏       | 193/871 [00:00<00:02, 274.23it/s]backtest loop:  25%|██▌       | 221/871 [00:00<00:02, 272.52it/s]backtest loop:  29%|██▊       | 249/871 [00:00<00:02, 274.24it/s]backtest loop:  32%|███▏      | 277/871 [00:01<00:02, 273.30it/s]backtest loop:  35%|███▌      | 305/871 [00:01<00:02, 273.80it/s]backtest loop:  38%|███▊      | 333/871 [00:01<00:01, 274.21it/s]backtest loop:  41%|████▏     | 361/871 [00:01<00:01, 273.86it/s]backtest loop:  45%|████▍     | 389/871 [00:01<00:01, 272.75it/s]backtest loop:  48%|████▊     | 417/871 [00:01<00:01, 274.89it/s]backtest loop:  51%|█████     | 445/871 [00:01<00:01, 274.08it/s]backtest loop:  54%|█████▍    | 473/871 [00:01<00:01, 270.85it/s]backtest loop:  58%|█████▊    | 501/871 [00:01<00:01, 267.78it/s]backtest loop:  61%|██████    | 528/871 [00:01<00:01, 267.70it/s]backtest loop:  64%|██████▎   | 555/871 [00:02<00:01, 265.49it/s]/Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/.venv/lib/python3.12/site-packages/qlib/utils/index_data.py:492: RuntimeWarning: Mean of empty slice
+  return np.nanmean(self.data)
+/Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/.venv/lib/python3.12/site-packages/qlib/utils/index_data.py:492: RuntimeWarning: Mean of empty slice
+  return np.nanmean(self.data)
+backtest loop:  67%|██████▋   | 582/871 [00:02<00:01, 262.76it/s]backtest loop:  70%|███████   | 610/871 [00:02<00:00, 262.65it/s]backtest loop:  73%|███████▎  | 638/871 [00:02<00:00, 265.63it/s]backtest loop:  76%|███████▋  | 665/871 [00:02<00:00, 248.58it/s]backtest loop:  79%|███████▉  | 691/871 [00:02<00:00, 250.83it/s]backtest loop:  83%|████████▎ | 719/871 [00:02<00:00, 253.94it/s]backtest loop:  86%|████████▌ | 745/871 [00:02<00:00, 255.48it/s]backtest loop:  89%|████████▊ | 772/871 [00:02<00:00, 256.73it/s]backtest loop:  92%|█████████▏| 800/871 [00:03<00:00, 261.99it/s]backtest loop:  95%|█████████▍| 827/871 [00:03<00:00, 261.69it/s]backtest loop:  98%|█████████▊| 854/871 [00:03<00:00, 207.57it/s]backtest loop: 100%|██████████| 871/871 [00:03<00:00, 255.55it/s]
+[98614:MainThread](2026-09-18 15:06:36,072) INFO - qlib.workflow - [record_temp.py:515] - Portfolio analysis record 'port_analysis_1day.pkl' has been saved as the artifact of the Experiment 177328310224783065
+[98614:MainThread](2026-09-18 15:06:36,076) INFO - qlib.workflow - [record_temp.py:540] - Indicator analysis record 'indicator_analysis_1day.pkl' has been saved as the artifact of the Experiment 177328310224783065
+[98614:MainThread](2026-09-18 15:06:36,428) INFO - qlib.timer - [log.py:127] - Time cost: 0.000s | waiting `async_log` Done
+'The following are analysis results of benchmark return(1day).'
+                       risk
+mean               0.000477
+std                0.012295
+annualized_return  0.113561
+information_ratio  0.598699
+max_drawdown      -0.370479
+'The following are analysis results of the excess return without cost(1day).'
+                       risk
+mean               0.000623
+std                0.005471
+annualized_return  0.148390
+information_ratio  1.758186
+max_drawdown      -0.084029
+'The following are analysis results of the excess return with cost(1day).'
+                       risk
+mean               0.000430
+std                0.005469
+annualized_return  0.102262
+information_ratio  1.212060
+max_drawdown      -0.104339
+'The following are analysis results of indicators(1day).'
+     value
+ffr    1.0
+pa     0.0
+pos    0.0

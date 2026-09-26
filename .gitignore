@@ -1,0 +1,23 @@
+# Python environments and caches
+.venv/
+**/.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Downloaded market data and experiment stores
+data/
+**/data/
+mlruns/
+**/mlruns/
+manual-mlruns/
+**/manual-mlruns/
+
+# Upstream framework checkouts (pinned in the evidence reports)
+qlib-source/
+**/source/
+
+# Accidental absolute-path mirrors and local OS metadata
+Users/
+**/Users/
+.DS_Store

@@ -1,0 +1,19 @@
+[98432:MainThread](2026-09-18 15:05:22,210) INFO - qlib.Initialization - [config.py:452] - default_conf: client.
+2026/09/18 15:05:23 INFO mlflow.agent.hint: Load the `instrumenting-with-mlflow-tracing` skill at /Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/.venv/lib/python3.12/site-packages/mlflow/assistant/skills/instrumenting-with-mlflow-tracing/SKILL.md before writing any tracing code; it ships with this MLflow install. Set MLFLOW_DISABLE_AGENT_HINT=1 to silence this.
+[98432:MainThread](2026-09-18 15:05:24,063) INFO - qlib.Initialization - [__init__.py:75] - qlib successfully initialized based on client settings.
+[98432:MainThread](2026-09-18 15:05:24,063) INFO - qlib.Initialization - [__init__.py:77] - data_path={'__DEFAULT_FREQ': PosixPath('/Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/data/cn_data')}
+provider_uri=/Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/data/cn_data
+calendar_count=8
+calendar_first=2020-07-01 00:00:00
+calendar_last=2020-07-10 00:00:00
+feature_rows=8
+                         $close       $volume
+instrument datetime                          
+SH000300   2020-07-01  4.322165  1.670649e+11
+           2020-07-02  4.411767  2.485863e+11
+           2020-07-03  4.496993  2.854863e+11
+           2020-07-06  4.751870  3.988369e+11
+           2020-07-07  4.780401  3.990211e+11
+           2020-07-08  4.857599  3.420845e+11
+           2020-07-09  4.925539  3.450054e+11
+           2020-07-10  4.836364  3.114949e+11
