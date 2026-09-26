@@ -1,0 +1,83 @@
+keys= ['benchmark_portfolio', 'portfolio', 'positions_weight', 'stock_account', 'stock_positions', 'summary', 'trades', 'yearly_risk_free_rates']
+summary=
+{'strategy_name': 'buy_and_hold',
+ 'start_date': '2016-06-01',
+ 'end_date': '2016-12-01',
+ 'strategy_file': 'source/rqalpha/examples/buy_and_hold.py',
+ 'run_type': 'BACKTEST',
+ 'starting_cash': 'STOCK:100000.0',
+ 'STOCK': 100000.0,
+ 'benchmark': '000300.XSHG',
+ 'benchmark_symbol': '沪深300',
+ 'alpha': np.float64(0.04928606029809729),
+ 'beta': np.float64(0.6903659197871062),
+ 'sharpe': np.float64(1.7232727800242968),
+ 'excess_sharpe': np.float64(-0.2528102138299236),
+ 'information_ratio': np.float64(0.6807325613312806),
+ 'downside_risk': np.float64(0.08359735729705382),
+ 'tracking_error': np.float64(0.09078561988930674),
+ 'sortino': np.float64(2.4352579543160857),
+ 'volatility': np.float64(0.118136334350145),
+ 'excess_volatility': np.float64(0.09078561988930674),
+ 'max_drawdown': np.float64(0.06504653484021118),
+ 'excess_max_drawdown': np.float64(0.08243331399758042),
+ 'excess_returns': np.float64(-0.010877486526503),
+ 'excess_annual_returns': np.float64(-0.02215848666746567),
+ 'var': np.float64(0.011376683308974381),
+ 'win_rate': 0.5447154471544715,
+ 'excess_win_rate': 0.5040650406504065,
+ 'excess_cum_returns': np.float64(-0.012234705606910534),
+ 'profit_loss_rate': np.float64(1.0369395457080008),
+ 'total_value': np.float64(111253.852),
+ 'cash': np.float64(1813.851999999999),
+ 'total_returns': np.float64(0.11253851999999998),
+ 'annualized_returns': np.float64(0.24419767225257383),
+ 'unit_net_value': np.float64(1.11253852),
+ 'units': 100000.0,
+ 'benchmark_total_returns': np.float64(0.12477322560691229),
+ 'benchmark_annualized_returns': np.float64(0.2723919523648448),
+ 'max_drawdown_duration': IndexRange(start=51, end=122, start_date=datetime.date(2016, 8, 15), end_date=datetime.date(2016, 12, 1)),
+ 'max_drawdown_duration_start_date': '2016-08-15',
+ 'max_drawdown_duration_end_date': '2016-12-01',
+ 'max_drawdown_duration_days': 108,
+ 'turnover': np.float64(0.47957069895353405),
+ 'annualized_twoside_turnover': np.float64(1.9650701810778957),
+ 'avg_daily_turnover': np.float64(0.0040650406504065045),
+ 'excess_max_drawdown_duration': IndexRange(start=41, end=122, start_date=datetime.date(2016, 8, 1), end_date=datetime.date(2016, 12, 1)),
+ 'excess_max_drawdown_duration_start_date': '2016-08-01',
+ 'excess_max_drawdown_duration_end_date': '2016-12-01',
+ 'excess_max_drawdown_duration_days': 122,
+ 'weekly_alpha': np.float64(0.01509775875947822),
+ 'weekly_beta': np.float64(0.8251957166516417),
+ 'weekly_sharpe': np.float64(1.5478373531032046),
+ 'weekly_sortino': np.float64(2.6477842811242716),
+ 'weekly_information_ratio': np.float64(0.20572873804129074),
+ 'weekly_tracking_error': np.float64(0.0941755286854879),
+ 'weekly_max_drawdown': np.float64(0.04653994133971516),
+ 'weekly_win_rate': 0.5,
+ 'weekly_volatility': np.float64(0.12901255123194577),
+ 'weekly_ulcer_index': np.float64(2.355057083444188),
+ 'weekly_ulcer_performance_index': np.float64(0.04265533236272885),
+ 'weekly_excess_sharpe': np.float64(-0.21030655182168187),
+ 'monthly_sharpe': np.float64(1.489444662346758),
+ 'monthly_volatility': np.float64(0.11259349625133282),
+ 'monthly_excess_win_rate': 0.2857142857142857,
+ 'weekly_excess_ulcer_index': np.float64(3.4423230858883325),
+ 'weekly_excess_ulcer_performance_index': np.float64(-0.006603524390139831)}
+trades_shape= (1, 13)
+trade_columns= ['datetime', 'trading_datetime', 'order_book_id', 'symbol', 'side', 'position_effect', 'exec_id', 'tax', 'commission', 'last_quantity', 'last_price', 'order_id', 'transaction_cost']
+                                datetime     trading_datetime order_book_id symbol side position_effect         exec_id  tax  commission  last_quantity  last_price        order_id  transaction_cost
+datetime                                                                                                                                                                                             
+2016-06-01 15:00:00  2016-06-01 15:00:00  2016-06-01 15:00:00   000001.XSHE   平安银行  BUY            OPEN  17897185620000    0      79.648           9500       10.48  17897185620000            79.648
+portfolio_shape= (123, 9)
+portfolio_columns= ['cash', 'total_value', 'market_value', 'unit_net_value', 'units', 'static_unit_net_value', 'benchmark_unit_net_value', 'arithmetic_excess_unit_net_value', 'geometric_excess_unit_net_value']
+               cash  total_value  market_value  unit_net_value     units  static_unit_net_value  benchmark_unit_net_value  arithmetic_excess_unit_net_value  geometric_excess_unit_net_value
+date                                                                                                                                                                                        
+2016-06-01  360.352    99920.352       99560.0        0.999204  100000.0                 1.0000                  0.997156                          0.002048                         0.002053
+2016-06-02  360.352    99730.352       99370.0        0.997304  100000.0                 0.9992                  0.999224                         -0.001920                        -0.001921
+2016-06-03  360.352   100110.352       99750.0        1.001104  100000.0                 0.9973                  1.006236                         -0.005132                        -0.005100
+                cash  total_value  market_value  unit_net_value     units  static_unit_net_value  benchmark_unit_net_value  arithmetic_excess_unit_net_value  geometric_excess_unit_net_value
+date                                                                                                                                                                                         
+2016-11-29  1813.852   111481.852      109668.0        1.114819  100000.0                 1.1160                  1.124459                         -0.009640                        -0.008573
+2016-11-30  1813.852   110683.852      108870.0        1.106839  100000.0                 1.1148                  1.116244                         -0.009405                        -0.008425
+2016-12-01  1813.852   111253.852      109440.0        1.112539  100000.0                 1.1068                  1.124773                         -0.012234                        -0.010877

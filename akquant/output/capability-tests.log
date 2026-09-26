@@ -1,0 +1,24 @@
+..........................................................               [100%]
+=============================== warnings summary ===============================
+source/tests/test_multisymbol_cross_section_consistency.py:29
+  /Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/akquant/source/tests/test_multisymbol_cross_section_consistency.py:29: UserWarning: 策略 BucketCrossSectionStrategy 定义了带参 __init__(symbols, lookback), 但未声明任何内联参数字段; 0.3.x 起构造函数签名不再是参数入口, 这些参数无法从 run_backtest / run_grid_search 外部传入, 将始终取默认值; 迁移: 类体按类型声明 symbols = IntParam(默认值) / FloatParam(默认值) / BoolParam(默认值) / ChoiceParam(默认值, choices=[...]) / ListParam(默认值) 等之一, 读取处 self.symbols -> self.params.symbols; 详见 docs/zh/guide/strategy.md#param-declaration
+    class BucketCrossSectionStrategy(Strategy):
+
+source/tests/test_multisymbol_cross_section_consistency.py:189
+  /Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/akquant/source/tests/test_multisymbol_cross_section_consistency.py:189: UserWarning: 策略 TargetWeightsStrategy 定义了带参 __init__(symbols), 但未声明任何内联参数字段; 0.3.x 起构造函数签名不再是参数入口, 这些参数无法从 run_backtest / run_grid_search 外部传入, 将始终取默认值; 迁移: 类体按类型声明 symbols = IntParam(默认值) / FloatParam(默认值) / BoolParam(默认值) / ChoiceParam(默认值, choices=[...]) / ListParam(默认值) 等之一, 读取处 self.symbols -> self.params.symbols; 详见 docs/zh/guide/strategy.md#param-declaration
+    class TargetWeightsStrategy(Strategy):
+
+source/tests/test_multisymbol_cross_section_consistency.py:222
+  /Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/akquant/source/tests/test_multisymbol_cross_section_consistency.py:222: UserWarning: 策略 TargetWeightsSplitStrategy 定义了带参 __init__(symbols), 但未声明任何内联参数字段; 0.3.x 起构造函数签名不再是参数入口, 这些参数无法从 run_backtest / run_grid_search 外部传入, 将始终取默认值; 迁移: 类体按类型声明 symbols = IntParam(默认值) / FloatParam(默认值) / BoolParam(默认值) / ChoiceParam(默认值, choices=[...]) / ListParam(默认值) 等之一, 读取处 self.symbols -> self.params.symbols; 详见 docs/zh/guide/strategy.md#param-declaration
+    class TargetWeightsSplitStrategy(Strategy):
+
+source/tests/test_multisymbol_cross_section_consistency.py:249
+  /Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/akquant/source/tests/test_multisymbol_cross_section_consistency.py:249: UserWarning: 策略 TargetWeightsSellThenBuyStrategy 定义了带参 __init__(symbols), 但未声明任何内联参数字段; 0.3.x 起构造函数签名不再是参数入口, 这些参数无法从 run_backtest / run_grid_search 外部传入, 将始终取默认值; 迁移: 类体按类型声明 symbols = IntParam(默认值) / FloatParam(默认值) / BoolParam(默认值) / ChoiceParam(默认值, choices=[...]) / ListParam(默认值) 等之一, 读取处 self.symbols -> self.params.symbols; 详见 docs/zh/guide/strategy.md#param-declaration
+    class TargetWeightsSellThenBuyStrategy(Strategy):
+
+source/tests/test_order_api_return_values.py:48
+  /Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/akquant/source/tests/test_order_api_return_values.py:48: UserWarning: 策略 _ReturnValueProbe 定义了带参 __init__(api), 但未声明任何内联参数字段; 0.3.x 起构造函数签名不再是参数入口, 这些参数无法从 run_backtest / run_grid_search 外部传入, 将始终取默认值; 迁移: 类体按类型声明 api = IntParam(默认值) / FloatParam(默认值) / BoolParam(默认值) / ChoiceParam(默认值, choices=[...]) / ListParam(默认值) 等之一, 读取处 self.api -> self.params.api; 详见 docs/zh/guide/strategy.md#param-declaration
+    class _ReturnValueProbe(Strategy):
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+58 passed, 5 warnings in 9.23s

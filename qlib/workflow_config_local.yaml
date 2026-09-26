@@ -1,0 +1,6 @@
+# Environment-only overlay. The official Alpha158/CSI300 benchmark remains the base.
+BASE_CONFIG_PATH: "../qlib-source/examples/benchmarks/LightGBM/workflow_config_lightgbm_Alpha158.yaml"
+
+qlib_init:
+    provider_uri: "/Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/qlib/data/cn_data"
+    region: cn

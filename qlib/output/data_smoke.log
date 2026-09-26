@@ -1,0 +1,38 @@
+^D[99641:MainThread](2026-09-18 15:08:15,190) INFO - qlib.Initialization - [config.py:452] - default_conf: client.
+2026/09/18 15:08:15 INFO mlflow.agent.hint: Load the `instrumenting-with-mlflow-tracing` skill at /Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/.venv/lib/python3.12/site-packages/mlflow/assistant/skills/instrumenting-with-mlflow-tracing/SKILL.md before writing any tracing code; it ships with this MLflow install. Set MLFLOW_DISABLE_AGENT_HINT=1 to silence this.
+[99641:MainThread](2026-09-18 15:08:15,473) INFO - qlib.Initialization - [__init__.py:75] - qlib successfully initialized based on client settings.
+[99641:MainThread](2026-09-18 15:08:15,473) INFO - qlib.Initialization - [__init__.py:77] - data_path={'__DEFAULT_FREQ': PosixPath('/Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/qlib/data/cn_data')}
+2026/09/18 15:08:16 INFO mlflow.agent.hint: Load the `instrumenting-with-mlflow-tracing` skill at /Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/.venv/lib/python3.12/site-packages/mlflow/assistant/skills/instrumenting-with-mlflow-tracing/SKILL.md before writing any tracing code; it ships with this MLflow install. Set MLFLOW_DISABLE_AGENT_HINT=1 to silence this.
+2026/09/18 15:08:16 INFO mlflow.agent.hint: Load the `instrumenting-with-mlflow-tracing` skill at /Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/.venv/lib/python3.12/site-packages/mlflow/assistant/skills/instrumenting-with-mlflow-tracing/SKILL.md before writing any tracing code; it ships with this MLflow install. Set MLFLOW_DISABLE_AGENT_HINT=1 to silence this.
+2026/09/18 15:08:16 INFO mlflow.agent.hint: Load the `instrumenting-with-mlflow-tracing` skill at /Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/.venv/lib/python3.12/site-packages/mlflow/assistant/skills/instrumenting-with-mlflow-tracing/SKILL.md before writing any tracing code; it ships with this MLflow install. Set MLFLOW_DISABLE_AGENT_HINT=1 to silence this.
+qlib_version=0.9.7
+provider_uri=/Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/qlib/data/cn_data
+calendar_first=2005-01-04
+calendar_last=2021-06-11
+sample_day=2021-06-11
+csi300_instrument_count=300
+                          $close      $volume
+instrument datetime                          
+SH600000   2021-06-11  12.733603   46347264.0
+SH600009   2021-06-11        NaN          NaN
+SH600010   2021-06-11   2.919968  264498160.0
+real 2.31
+user 3.72
+sys 0.73
+           234340352  maximum resident set size
+                   0  average shared memory size
+                   0  average unshared data size
+                   0  average unshared stack size
+              169227  page reclaims
+                  36  page faults
+                   0  swaps
+                   0  block input operations
+                   0  block output operations
+                   0  messages sent
+                   0  messages received
+                   0  signals received
+                  43  voluntary context switches
+                5842  involuntary context switches
+         12557869613  instructions retired
+          4638902198  cycles elapsed
+           180814544  peak memory footprint
