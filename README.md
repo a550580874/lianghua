@@ -4,7 +4,7 @@
 
 This directory is an independent, evidence-first evaluation of open-source quant frameworks. It does not modify or import code from the adjacent `a-share-quant` project.
 
-Current gate: **AKQuant PoC reached its human acceptance point on 2026-09-20.** Qlib and RQAlpha are closed; AKQuant awaits human reproduction.
+Current gate: **AKQuant PoC human acceptance passed.** Qlib, RQAlpha and AKQuant have all completed their gated PoC acceptance runs.
 
 This is not a framework selection, ranking, investment recommendation, live-trading integration, or validation for use with real funds.
 
@@ -28,7 +28,7 @@ framework repositories are intentionally excluded from Git. Their pinned version
 official URLs and reproduction commands are recorded in `environment.md` and the
 framework reports under `results/`.
 
-Creating the assigned Multica issue automatically triggered a second C2 run during the earlier Qlib phase. Both Qlib runs used the same official Alpha158/CSI300 workflow and produced matching metrics. The `qlib/output/` set and `results/qlib.md` are the canonical Qlib artifacts; the root `logs/` and `mlruns/` set remains preserved. Qlib and RQAlpha subsequently passed their human acceptance gates. AKQuant work is isolated from both accepted environments.
+Creating the assigned Multica issue automatically triggered a second C2 run during the earlier Qlib phase. Both Qlib runs used the same official Alpha158/CSI300 workflow and produced matching metrics. The `qlib/output/` set and `results/qlib.md` are the canonical Qlib artifacts; the root `logs/` and `mlruns/` set remains preserved. Qlib, RQAlpha and AKQuant subsequently passed their human acceptance gates. AKQuant work remains isolated from the other accepted environments.
 
 ## Qlib acceptance reproduction
 
@@ -107,6 +107,8 @@ Expect `trades.csv`, `portfolio.csv`, `stock_account.csv`, `stock_positions.csv`
 ## AKQuant acceptance reproduction
 
 See `results/akquant.md` for the copy-ready command block, exact expected output and PASS/FAIL/BLOCKED criteria. The acceptance run uses the unchanged `akquant/source/examples/01_quickstart.py` and writes only `akquant/output/manual_acceptance.log`; the official example does not generate a report or plot.
+
+Human acceptance passed with exit code 0. The reproduced run matched the Agent baseline: two bars, three filled BUY orders, three open positions, CNY 15 total commission, end market value 4,870,549.04 and total return -2.589019%. This confirms reproducibility of the official quickstart only; the A-share-rule, fee, ETF subtype, suspension and remote-data boundaries documented in `results/akquant.md` remain unchanged.
 
 ## Objective comparison table
 
