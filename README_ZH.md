@@ -233,6 +233,12 @@ IC 是横截面因子值与 forward return 的相关性，ICIR 是 `IC mean / IC
 
 Coverage 测量数据是否同时有因子和 label；IC t-stat 测量 daily IC 均值相对其样本标准误的大小；positive ratio 表示 daily IC 大于 0 的比例。Rank autocorrelation 测量因子信号在相邻交易日的持续性；factor decay 比较不同持有 horizon 的描述性相关性；factor correlation 测量因子之间的横截面重叠；quantile spread t-stat 测量每日 Q5-Q1 spread 的统计稳定性。所有统计都按 split 独立计算，不跨边界借用未来价格。
 
+### Alphalens 独立交叉验证
+
+`research/factor_v1/alphalens_validation/` 使用隔离环境中的 Alphalens Reloaded 0.4.6 作为独立 factor-analysis oracle。adapter 把 signal date `t` 映射到下一个实际交易日 `entry_date=t+1`，再让 Alphalens 计算 1D/5D/10D/20D，避免把自然日加一天误当交易日。输出位于 `research/factor_v1/output/cross_validation/`，包括 Rank IC、五分位收益、Q5 turnover、对齐元数据、报告和自动验收摘要。
+
+交叉验证状态只表示实现一致性：`MATCH` 是严格容差内一致；`DATA_ALIGNMENT_DIFFERENCE` 表示有效样本或价格/时间对齐不同；`SEMANTIC_DIFFERENCE` 表示统计定义或日历假设不同；没有直接对应 API 的指标不强行比较。它不是盈利性验证，也不用于选择、排名或淘汰因子。
+
 ### 防止未来数据
 
 因子值来自当日 Alpha158 输出，label 由 Qlib 官方 forward-return 表达式生成；脚本只按固定日期切分，不用 Test 结果修改因子或参数。这里的 label 时序解释沿用 Qlib 文档，不等价于已经验证完整的 A 股投资组合 T+1 执行规则。

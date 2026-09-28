@@ -1,0 +1,14 @@
+command: isolated environment
+alphalens_reloaded=0.4.6
+python=3.12.12
+pandas=2.3.3
+numpy=2.5.3
+command: adapter tests
+Ran 3 tests in 0.010s
+OK
+command: validate.py
+rank_rows=60 quantile_rows=300 turnover_rows=15
+exit_code=0
+command: report.py
+report=cross_validation_report.md
+exit_code=0
