@@ -220,13 +220,18 @@ mkdir -p research/factor_v1/output
 结果位于 `research/factor_v1/output/`：
 
 - `factor_summary.csv`：每个因子在每个 split 的 IC mean/std/ICIR、Rank IC mean/Rank ICIR、Q5-Q1 spread 和 top-quantile turnover。
+- `factor_summary.csv` 同时包含 daily IC / Rank IC 的 median、正负比例、sample-standard-error、t-stat 和 observation days。
 - `factor_ic_by_year.csv`：按年度的 IC、Rank IC 和样本数，用于观察时间稳定性。
 - `quantile_returns.csv`：每日横截面五分位汇总后的各组平均 forward return、Q5-Q1 spread 和原始方向单调性标记。
 - `turnover.csv`：top Q5 的相邻交易日 turnover；公式在 `report.md` 中明确写出。
 - `report.md`：包含 Data、Universe、Label、Factors、Train/Validation/Test Results、IC Stability、Quantile Analysis、Turnover、Observations、Limitations。
 - `acceptance.log`：本次实际执行日志；`factors.csv.gz` 是较大的原始中间文件，默认不提交 Git。
 
+Factor Research v2 还输出 `factor_coverage.csv`（因子与 label 同时有效的行数 / split 总行数）、`factor_rank_autocorrelation.csv`（相邻交易日共同股票上的 Spearman signal persistence）、`factor_decay.csv`（1D/5D/10D/20D forward-return horizon 的 IC/Rank IC）、`factor_correlation.csv`（每日横截面 Pearson/Spearman 的长表平均）、以及 `quantile_spread_stats.csv`（每日 Q5-Q1 spread 的均值、样本标准差、标准误和 t-stat）。这些指标用于稳健性诊断，不会自动删除、排序或加权因子。
+
 IC 是横截面因子值与 forward return 的相关性，ICIR 是 `IC mean / IC std`；Rank IC 使用排序后的相关性。Quantile analysis 按每个交易日把股票分成 Q1–Q5，保留原始因子方向，不因为观察到负相关而偷偷翻转。Turnover 定义为 `1 - overlap(previous top Q5, current top Q5) / previous top Q5 size`。
+
+Coverage 测量数据是否同时有因子和 label；IC t-stat 测量 daily IC 均值相对其样本标准误的大小；positive ratio 表示 daily IC 大于 0 的比例。Rank autocorrelation 测量因子信号在相邻交易日的持续性；factor decay 比较不同持有 horizon 的描述性相关性；factor correlation 测量因子之间的横截面重叠；quantile spread t-stat 测量每日 Q5-Q1 spread 的统计稳定性。所有统计都按 split 独立计算，不跨边界借用未来价格。
 
 ### 防止未来数据
 

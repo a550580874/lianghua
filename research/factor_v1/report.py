@@ -32,6 +32,11 @@ def main() -> None:
     annual = pd.read_csv(args.output_dir / "factor_ic_by_year.csv")
     quantiles = pd.read_csv(args.output_dir / "quantile_returns.csv")
     turnover = pd.read_csv(args.output_dir / "turnover.csv")
+    coverage = pd.read_csv(args.output_dir / "factor_coverage.csv")
+    autocorrelation = pd.read_csv(args.output_dir / "factor_rank_autocorrelation.csv")
+    decay = pd.read_csv(args.output_dir / "factor_decay.csv")
+    correlation = pd.read_csv(args.output_dir / "factor_correlation.csv")
+    spread_stats = pd.read_csv(args.output_dir / "quantile_spread_stats.csv")
 
     lines = [
         "# Factor Research v1",
@@ -76,6 +81,34 @@ def main() -> None:
     for _, row in turnover.iterrows():
         lines.append("| " + " | ".join(fmt(row[key]) for key in ["split", "factor", "top_quantile_turnover", "observations"]) + " |")
 
+    lines.extend(["", "## Coverage", "", "Coverage is defined as `valid_factor_and_label_observations / total_rows`; low coverage is reported, not used to remove a factor.", "", "| Split | Factor | Total rows | Valid factor+label | Coverage ratio | Trading days | Avg cross-section | Median cross-section | Min | Max |", "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|"])
+    for _, row in coverage.iterrows():
+        lines.append("| " + " | ".join(fmt(row[key]) for key in ["split", "factor", "total_rows", "valid_factor_and_label_observations", "coverage_ratio", "trading_days", "average_daily_cross_section", "median_daily_cross_section", "min_daily_cross_section", "max_daily_cross_section"]) + " |")
+
+    lines.extend(["", "## IC Distribution", "", "The IC distribution uses daily cross-sectional observations. `ic_std` and standard error use sample ddof=1; t-stat is mean / standard error. Positive and negative ratios exclude zero.", "", "| Split | Factor | IC median | IC positive ratio | IC negative ratio | IC SE | IC t-stat | IC days |", "|---|---|---:|---:|---:|---:|---:|---:|"])
+    for _, row in summary.iterrows():
+        lines.append("| " + " | ".join(fmt(row[key]) for key in ["split", "factor", "ic_median", "ic_positive_ratio", "ic_negative_ratio", "ic_standard_error", "ic_t_stat", "ic_observation_days"]) + " |")
+
+    lines.extend(["", "## Rank IC Distribution", "", "Rank IC distribution statistics use the same daily sample definition as IC.", "", "| Split | Factor | Rank IC median | Positive ratio | Negative ratio | SE | t-stat | Days |", "|---|---|---:|---:|---:|---:|---:|---:|"])
+    for _, row in summary.iterrows():
+        lines.append("| " + " | ".join(fmt(row[key]) for key in ["split", "factor", "rank_ic_median", "rank_ic_positive_ratio", "rank_ic_negative_ratio", "rank_ic_standard_error", "rank_ic_t_stat", "rank_ic_observation_days"]) + " |")
+
+    lines.extend(["", "## Factor Rank Autocorrelation", "", "Each value is a Spearman correlation of factor values on adjacent trading dates using only the common instruments; split boundaries are not crossed.", "", "| Split | Factor | Mean | Median | Std | Min | Max | Pairs | Positive ratio |", "|---|---|---:|---:|---:|---:|---:|---:|---:|"])
+    for _, row in autocorrelation.iterrows():
+        lines.append("| " + " | ".join(fmt(row[key]) for key in ["split", "factor", "mean", "median", "std", "min", "max", "observation_pairs", "positive_ratio"]) + " |")
+
+    lines.extend(["", "## Factor Decay", "", "For horizon H, forward return is `Ref($close, -(H+1)) / Ref($close, -1) - 1`. Signals whose exit date exceeds their own split end are excluded; no next-split price fills the tail.", "", "| Split | Factor | Horizon | IC mean | IC std | ICIR | Rank IC mean | Rank IC std | Rank ICIR | IC days | Rank IC days |", "|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|"])
+    for _, row in decay.iterrows():
+        lines.append("| " + " | ".join(fmt(row[key]) for key in ["split", "factor", "horizon", "ic_mean", "ic_std", "icir", "rank_ic_mean", "rank_ic_std", "rank_icir", "ic_observation_days", "rank_ic_observation_days"]) + " |")
+
+    lines.extend(["", "## Factor Correlation", "", "Pearson and Spearman factor correlations are computed cross-sectionally per day and then averaged in long format. No factor is removed based on correlation.", "", "| Split | Method | Factor A | Factor B | Mean correlation | Days |", "|---|---|---|---|---:|---:|"])
+    for _, row in correlation.iterrows():
+        lines.append("| " + " | ".join(fmt(row[key]) for key in ["split", "method", "factor_a", "factor_b", "mean_correlation", "observation_days"]) + " |")
+
+    lines.extend(["", "## Quantile Spread Statistics", "", "Daily spread is mean forward return of Q5 minus mean forward return of Q1. Standard deviation is sample ddof=1 and t-stat uses daily spread observations.", "", "| Split | Factor | Mean | Median | Std | SE | t-stat | Positive ratio | Negative ratio | Days |", "|---|---|---:|---:|---:|---:|---:|---:|---:|---:|"])
+    for _, row in spread_stats.iterrows():
+        lines.append("| " + " | ".join(fmt(row[key]) for key in ["split", "factor", "spread_mean", "spread_median", "spread_std", "spread_standard_error", "spread_t_stat", "positive_day_ratio", "negative_day_ratio", "observation_days"]) + " |")
+
     lines.extend(
         [
             "",
@@ -84,6 +117,7 @@ def main() -> None:
             "- These are descriptive factor diagnostics, not a strategy, portfolio construction rule, or investment recommendation.",
             "- Train, validation and test rows are reported separately; test results are not used to alter factors or parameters.",
             "- Annual IC and Rank IC are included so a full-period average does not hide year-to-year instability.",
+            "- V2 robustness diagnostics are descriptive only; they do not select, rank, drop or reweight factors.",
             "",
             "## Limitations",
             "",

@@ -15,6 +15,7 @@ import qlib
 import yaml
 from qlib.constant import REG_CN
 from qlib.contrib.data.handler import Alpha158
+from qlib.data import D
 from qlib.data.dataset.handler import DataHandlerLP
 
 
@@ -72,6 +73,14 @@ def main() -> None:
     selected = feature_frame.loc[:, factors].copy()
     selected[config["label"]["name"]] = frame["label"][label_names[0]]
     selected = selected.reset_index()
+    close_frame = D.features(
+        D.instruments(config["universe"]),
+        fields=["$close"],
+        start_time=start,
+        end_time=end,
+        freq=config["frequency"],
+    ).rename(columns={"$close": "close"}).reset_index()
+    selected = selected.merge(close_frame, on=["instrument", "datetime"], how="left", validate="one_to_one")
     selected["datetime"] = pd.to_datetime(selected["datetime"]).dt.strftime("%Y-%m-%d")
     args.output_dir.mkdir(parents=True, exist_ok=True)
     output_path = args.output_dir / "factors.csv.gz"
