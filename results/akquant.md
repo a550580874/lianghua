@@ -273,3 +273,19 @@ Because the remote historical-data endpoint can revise or fail, network/data err
 - Report/plot/data output: none; the official quickstart does not create these artifacts.
 
 `PASS` requires correct versions/commit/tag, an empty official-example diff, a complete exit-0 run, three filled orders and the expected portfolio summary. `FAIL` means the engine runs but outputs materially differ or an order is rejected/errored. `BLOCKED` means installation/import or the remote official-example data dependency prevents the run; retain the complete log and do not patch core code.
+
+## 人工验收记录
+
+状态：**PASS（人工验收已完成）**。
+
+人工复现与 Agent 基线一致：官方 quickstart 完整运行，最终 `akquant_exit_code=0`；观察到 `total_bars=2`、`execution_count=3`、`open_position_count=3` 和 `stream_events=24`。
+
+| Symbol | Side | Quantity | Fill price | Commission | Status |
+|---|---|---:|---:|---:|---|
+| `600000` | BUY | 162,882 | 10.12 | 5.00 | `filled` |
+| `600004` | BUY | 176,470 | 9.33 | 5.00 | `filled` |
+| `600006` | BUY | 221,774 | 7.36 | 5.00 | `filled` |
+
+人工验收组合结果：`initial_market_value=5000000.0`、`end_market_value=4870549.04`、`total_pnl=-129450.96`、`total_return_pct=-2.589019`、`total_commission=15.0`。Manual 与 Rust 的 total return、annualized return、max drawdown、R²、standard error 一致；两日样本下 Volatility 的 Manual=`nan`、Rust=`0` 为本次已知且接受的差异。
+
+该 PASS 仅确认本报告所述安装、官方 quickstart 和输出可复现，不扩大能力结论：quickstart 不是完整 A 股规则验收，未启用 T+1，示例税费不代表 2026 实际费率；A 股日涨跌停仍为 `NOT FOUND / NEEDS CURRENT-RULE VALIDATION`，ETF 子类型规则不自动分类，停牌主要是 zero-volume / missing-slice 语义，且 AKShare 仍是远程公共数据依赖。
