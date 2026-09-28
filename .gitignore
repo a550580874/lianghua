@@ -21,3 +21,6 @@ qlib-source/
 Users/
 **/Users/
 .DS_Store
+
+# Factor Research v1 raw intermediate
+research/factor_v1/output/factors.csv.gz

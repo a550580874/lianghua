@@ -91,6 +91,12 @@ lianghua/
 │   └── output/                       # RQAlpha 日志、pickle、CSV/XLSX 报告
 ├── akquant/
 │   └── output/                       # AKQuant quickstart/test/install 证据
+├── research/factor_v1/
+│   ├── config.yaml                    # 固定区间、因子、label 和 timing invariant
+│   ├── extract_factors.py             # 调用 Qlib Alpha158，选择五个官方列
+│   ├── analyze_factors.py             # IC、Rank IC、分位数和 turnover
+│   ├── report.py                      # 生成 Markdown 报告
+│   └── output/                        # 运行后生成的 CSV、report 和日志
 ├── logs/                             # 较早一次 Qlib 运行日志；保留作历史证据
 └── results/
     ├── qlib.md                       # Qlib 能力与运行证据
@@ -184,6 +190,47 @@ MLFLOW_ALLOW_FILE_STORE=true ../.venv/bin/qrun workflow_config_local.yaml \
 - `max drawdown`：从历史高点到后续低点的最大回撤。
 
 仓库已有基线日志在 `qlib/output/`，详细结论在 `results/qlib.md`。新运行生成的 MLflow artifacts 会在 `qlib/output/mlruns/`，该目录不提交 Git。
+
+## 因子研究
+
+Factor Research v1 是建立在现有 Qlib PoC 之上的诊断工作流，不是交易策略。它直接读取 Qlib 官方 Alpha158 的原始输出，选择 `ROC20`、`STD20`、`MA20`、`VSTD20`、`CORR20` 五个已有因子，使用官方 label `Ref($close, -2) / Ref($close, -1) - 1`，按 Train / Validation / Test 分段计算描述性统计。它不重新实现因子，不训练 LightGBM，不做因子组合优化，不生成 TopK 组合或买卖信号。
+
+### 运行
+
+先按上面的 Qlib 章节重建 `.venv` 和 `qlib/data/cn_data`。从仓库根目录执行，`--provider-uri` 必须指向本机已经重建的 Qlib sample data：
+
+```bash
+mkdir -p research/factor_v1/output
+
+.venv/bin/python research/factor_v1/extract_factors.py \
+  --provider-uri /absolute/path/to/qlib/data/cn_data \
+  2>&1 | tee research/factor_v1/output/acceptance.log
+
+.venv/bin/python research/factor_v1/analyze_factors.py \
+  2>&1 | tee -a research/factor_v1/output/acceptance.log
+
+.venv/bin/python research/factor_v1/report.py \
+  2>&1 | tee -a research/factor_v1/output/acceptance.log
+```
+
+这是三个独立步骤：第一步调用 Qlib Alpha158 并保存选定列，第二步只做统计分析，第三步把 CSV 渲染成 Markdown。若数据不存在、Qlib 未安装或远程数据无法重建，结果是 `BLOCKED`，不应自行补写因子。
+
+### 输出
+
+结果位于 `research/factor_v1/output/`：
+
+- `factor_summary.csv`：每个因子在每个 split 的 IC mean/std/ICIR、Rank IC mean/Rank ICIR、Q5-Q1 spread 和 top-quantile turnover。
+- `factor_ic_by_year.csv`：按年度的 IC、Rank IC 和样本数，用于观察时间稳定性。
+- `quantile_returns.csv`：每日横截面五分位汇总后的各组平均 forward return、Q5-Q1 spread 和原始方向单调性标记。
+- `turnover.csv`：top Q5 的相邻交易日 turnover；公式在 `report.md` 中明确写出。
+- `report.md`：包含 Data、Universe、Label、Factors、Train/Validation/Test Results、IC Stability、Quantile Analysis、Turnover、Observations、Limitations。
+- `acceptance.log`：本次实际执行日志；`factors.csv.gz` 是较大的原始中间文件，默认不提交 Git。
+
+IC 是横截面因子值与 forward return 的相关性，ICIR 是 `IC mean / IC std`；Rank IC 使用排序后的相关性。Quantile analysis 按每个交易日把股票分成 Q1–Q5，保留原始因子方向，不因为观察到负相关而偷偷翻转。Turnover 定义为 `1 - overlap(previous top Q5, current top Q5) / previous top Q5 size`。
+
+### 防止未来数据
+
+因子值来自当日 Alpha158 输出，label 由 Qlib 官方 forward-return 表达式生成；脚本只按固定日期切分，不用 Test 结果修改因子或参数。这里的 label 时序解释沿用 Qlib 文档，不等价于已经验证完整的 A 股投资组合 T+1 执行规则。
 
 ## RQAlpha 怎么用
 
@@ -317,6 +364,7 @@ Small Capital Live Trading
 ### Qlib
 
 - `qlib_data_simple` 日历截止 2021-06-11，不能代表当前市场。
+- 对应最后一个非空官方 forward label 是 2021-06-09；当前 workflow Test 截止 2020-08-01。样本较新日期的 CSI300 成员存在缺少 feature 目录的标的，扩展日期前需要另做覆盖率检查。
 - 官方 Microsoft dataset 当时不可用；官方 CLI 实际从社区托管快照下载，底层示例数据被提示来自 Yahoo Finance 且可能不完美。
 - 本 PoC 没有独立校验数据正确性，也没有验证完整 A 股 T+1、停牌、板块/ST/日期涨跌停和完整税费规则。
 

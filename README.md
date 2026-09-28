@@ -26,6 +26,7 @@ This is not a framework selection, ranking, investment recommendation, live-trad
 ├── results/                   # framework evidence reports and usability-gap audit
 ├── scripts/                   # read-only verification helpers
 ├── qlib/                      # Qlib config, verifier and compact logs
+├── research/factor_v1/        # Alpha158 factor diagnostics (no strategy)
 ├── rqalpha/output/            # compact RQAlpha run/report artifacts
 └── akquant/output/            # compact AKQuant run/test artifacts
 ```
@@ -118,6 +119,10 @@ Expect `trades.csv`, `portfolio.csv`, `stock_account.csv`, `stock_positions.csv`
 See `results/akquant.md` for the copy-ready command block, exact expected output and PASS/FAIL/BLOCKED criteria. The acceptance run uses the unchanged `akquant/source/examples/01_quickstart.py` and writes only `akquant/output/manual_acceptance.log`; the official example does not generate a report or plot.
 
 Human acceptance passed with exit code 0. The reproduced run matched the Agent baseline: two bars, three filled BUY orders, three open positions, CNY 15 total commission, end market value 4,870,549.04 and total return -2.589019%. This confirms reproducibility of the official quickstart only; the A-share-rule, fee, ETF subtype, suspension and remote-data boundaries documented in `results/akquant.md` remain unchanged.
+
+## Factor Research v1
+
+`research/factor_v1/` is a Qlib Alpha158 diagnostic workflow added after the three framework PoCs. It uses the official `ROC20`, `STD20`, `MA20`, `VSTD20` and `CORR20` outputs with the official forward-return label; it does not define a strategy, train a model or construct a portfolio. Run instructions, timing boundaries and output meanings are in [README_ZH.md](README_ZH.md#因子研究); generated summaries and the report are under `research/factor_v1/output/` after a local Qlib environment/data rebuild.
 
 ## Objective comparison table
 
