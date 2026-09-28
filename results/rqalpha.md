@@ -130,6 +130,8 @@ Artifacts:
 - `rqalpha/output/buy_and_hold.pkl`: official result
 - `rqalpha/output/result_inspection.log`: read-only inspection
 - `rqalpha/output/report/`: official report export (`trades.csv`, `portfolio.csv`, `stock_account.csv`, `stock_positions.csv`, `positions_weight.csv`, `summary.xlsx`)
+- `rqalpha/output/manual_acceptance.log` and `manual_acceptance.pkl`: human-acceptance run evidence
+- `rqalpha/output/manual_report/`: human-acceptance report export with the same six report types
 - `rqalpha/output/bundle_download.log`: bundle log
 
 These historical results are reproduction evidence only, not current strategy performance or investment advice.

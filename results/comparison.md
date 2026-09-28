@@ -25,3 +25,5 @@ Qlib、RQAlpha 与 AKQuant 均已完成人工验收并通过。下表只汇总�
 | 证据位置 | `results/qlib.md`, `qlib/output/` | `results/rqalpha.md`, `rqalpha/output/` | `results/akquant.md`, `akquant/output/` |
 
 三项 PoC 均保持相同原则：优先官方安装、官方数据/推荐数据与官方示例；记录原始口径，不为追求 PASS 重写框架核心逻辑。当前性能、收益和成本数字的输入口径不同，不作横向优劣结论。
+
+可用性说明：三项 PASS 均来自已重建环境中的 Agent 与人工验收，不等于 fresh clone 可直接运行。Git 未包含 virtualenv、下载数据/bundle、上游源码、官方 example 和 MLflow store；逐项重建路径与缺口见 `README_ZH.md` 和 `results/usability_gap.md`。
