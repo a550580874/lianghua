@@ -1,0 +1,7 @@
+Data Foundation v1 automatic acceptance: BLOCKED_CREDENTIAL
+Tushare source selected; no alternate source substituted.
+TUSHARE_TOKEN missing; no API request attempted.
+Capability report generated with all interfaces not_attempted.
+CSI300 PIT membership: UNIVERSE_PIT_NOT_VALIDATED.
+Quality/Qlib compatibility: BLOCKED_INPUT until a permitted download exists.
+Deterministic tests cover schema, duplicates, OHLC, and token safety.

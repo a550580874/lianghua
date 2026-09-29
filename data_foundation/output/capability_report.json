@@ -1,0 +1,48 @@
+{
+  "generated_at": "2026-09-29",
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "credential_status": "missing",
+  "interfaces": {
+    "trade_cal": {
+      "status": "not_attempted",
+      "reason": "TUSHARE_TOKEN is not set"
+    },
+    "stock_basic": {
+      "status": "not_attempted",
+      "reason": "TUSHARE_TOKEN is not set"
+    },
+    "daily": {
+      "status": "not_attempted",
+      "reason": "TUSHARE_TOKEN is not set"
+    },
+    "adj_factor": {
+      "status": "not_attempted",
+      "reason": "TUSHARE_TOKEN is not set"
+    },
+    "daily_basic": {
+      "status": "not_attempted",
+      "reason": "TUSHARE_TOKEN is not set"
+    },
+    "suspend_d": {
+      "status": "not_attempted",
+      "reason": "TUSHARE_TOKEN is not set"
+    },
+    "stk_limit": {
+      "status": "not_attempted",
+      "reason": "TUSHARE_TOKEN is not set"
+    },
+    "index_weight": {
+      "status": "not_attempted",
+      "reason": "TUSHARE_TOKEN is not set"
+    },
+    "index_classify": {
+      "status": "not_attempted",
+      "reason": "TUSHARE_TOKEN is not set"
+    },
+    "index_member_all": {
+      "status": "not_attempted",
+      "reason": "TUSHARE_TOKEN is not set"
+    }
+  },
+  "status": "BLOCKED_CREDENTIAL"
+}

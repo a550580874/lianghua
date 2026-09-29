@@ -24,3 +24,7 @@ Users/
 
 # Factor Research v1 raw intermediate
 research/factor_v1/output/factors.csv.gz
+data_foundation/output/parquet/
+data_foundation/output/raw/
+data_foundation/output/cache/
+*.parquet
