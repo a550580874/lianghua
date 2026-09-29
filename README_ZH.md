@@ -193,6 +193,19 @@ MLFLOW_ALLOW_FILE_STORE=true ../.venv/bin/qrun workflow_config_local.yaml \
 
 ## 因子研究
 
+### v3.1 独立统计交叉验证
+
+`research/factor_v1/alphalens_validation/` 还提供 Alphalens Reloaded 的精确样本对照。v3.1 将验证拆成两层：Layer A 把相同日期、股票、因子值和 forward return 交给 Alphalens，检查 Rank IC、分位数组和分位数收益的统计实现；Layer B 单独检查 `signal(t) → next trading day entry → entry+H exit` 的 forward-return 对齐。这样不会把价格日历差异误判成统计实现 bug。
+
+运行（使用独立环境）并生成结果：
+
+```bash
+research/factor_v1/alphalens_validation/.venv/bin/python \\
+  research/factor_v1/alphalens_validation/exact_validate.py
+```
+
+结果位于 `research/factor_v1/output/cross_validation_exact/`。`rank_ic_exact_summary.csv` 记录严格 `1e-10` 容差下的逐日 Rank IC；`quantile_assignment_comparison.csv` 记录分位数/tie 处理；`turnover_definition_analysis.csv` 对比 previous-size 与 current-size 分母；`forward_return_alignment_summary.csv` 单独记录价格对齐差异。`MATCH` 表示相同输入下数值一致，`SEMANTIC_DIFFERENCE` 表示 API 定义不同，`DATA_ALIGNMENT_DIFFERENCE` 仅表示 forward-return 样本或时间对齐不同。
+
 Factor Research v1 是建立在现有 Qlib PoC 之上的诊断工作流，不是交易策略。它直接读取 Qlib 官方 Alpha158 的原始输出，选择 `ROC20`、`STD20`、`MA20`、`VSTD20`、`CORR20` 五个已有因子，使用官方 label `Ref($close, -2) / Ref($close, -1) - 1`，按 Train / Validation / Test 分段计算描述性统计。它不重新实现因子，不训练 LightGBM，不做因子组合优化，不生成 TopK 组合或买卖信号。
 
 ### 运行

@@ -1,0 +1,5 @@
+v3.1 exact oracle acceptance
+environment=alphalens-reloaded 0.4.6; python=3.12.12; platform=macOS arm64
+exact_validate.py exit_code=0
+rank_ic_exact_summary: 60 MATCH, 0 IMPLEMENTATION_BUG
+baseline regression: PASS
