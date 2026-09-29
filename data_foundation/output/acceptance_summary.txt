@@ -1,7 +1,9 @@
-Data Foundation v1 automatic acceptance: BLOCKED_CREDENTIAL
-Tushare source selected; no alternate source substituted.
-TUSHARE_TOKEN missing; no API request attempted.
-Capability report generated with all interfaces not_attempted.
-CSI300 PIT membership: UNIVERSE_PIT_NOT_VALIDATED.
-Quality/Qlib compatibility: BLOCKED_INPUT until a permitted download exists.
-Deterministic tests cover schema, duplicates, OHLC, and token safety.
+Data Foundation v1 automatic acceptance: PARTIAL_PASS_PERMISSION_BLOCKED
+Credential: configured (value never printed or persisted)
+Tushare capability: all 10 requested interfaces returned PERMISSION_DENIED.
+Download: not executed because the core chain is permission-blocked; no alternate source substituted.
+Date range requested: 2024-01-01..2024-03-31; actual downloaded rows: none.
+Universe: CSI300 PIT not validated (index_weight permission denied).
+Canonical schema: documented; raw OHLC and adj_factor remain separate.
+Quality/Qlib/Alpha158: BLOCKED_INPUT because no permitted canonical parquet exists.
+Deterministic tests: 3/3 PASS in isolated data_foundation/.venv.
