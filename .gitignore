@@ -28,3 +28,5 @@ data_foundation/output/parquet/
 data_foundation/output/raw/
 data_foundation/output/cache/
 *.parquet
+
+data_foundation/output/parquet_baostock/

@@ -14,3 +14,5 @@ The source layer keeps raw market observations separate from adjustment metadata
 | index_membership | `index_code`, `instrument`, `source_date`, `weight` | source snapshot; no effective interval inferred |
 
 The 2024-01-01 through 2024-03-31 range is a small PoC window. CSI300 PIT membership remains unresolved until `index_weight` permission and source semantics are confirmed.
+
+BaoStock `query_hs300_stocks(date=...)` returned changing historical snapshots and an `updateDate`; this supports snapshot availability, not effective intervals. Raw snapshot rows are retained without deriving `effective_from`/`effective_to`.

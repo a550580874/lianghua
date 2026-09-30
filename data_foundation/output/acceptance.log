@@ -1,7 +1,9 @@
-Data Foundation v1 acceptance
-status=PARTIAL_PASS_PERMISSION_BLOCKED
-credential_status=configured
-capability_probe=10 permission_denied
-download=blocked_before_write
-no token value written
+Data Foundation v1.1 acceptance
+status=PARTIAL_PASS
+source=baostock 0.9.4
+window=2024-01-01..2024-03-31
+raw_rows=116
+hs300=historical snapshots available; effective intervals not inferred
+price_limit=missing; market_value=missing; adjustment=empty in sample
+qlib_compatibility=blocked_input_conversion
 tests=3 passed
