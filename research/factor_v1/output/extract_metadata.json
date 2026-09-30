@@ -1,0 +1,19 @@
+{
+  "qlib_version": "0.9.7",
+  "universe": "csi300",
+  "frequency": "day",
+  "factors": [
+    "ROC20",
+    "STD20",
+    "MA20",
+    "VSTD20",
+    "CORR20"
+  ],
+  "label_expression": "Ref($close, -2)/Ref($close, -1) - 1",
+  "rows": 909996,
+  "first_datetime": "2008-01-02",
+  "last_datetime": "2020-07-31",
+  "provider_uri": "qlib/data/cn_data",
+  "provider_uri_override_used": true,
+  "source": "Qlib Alpha158 raw handler output; no factor formula was reimplemented"
+}

@@ -1,0 +1,7 @@
+Factor Research Workflow v4 automatic acceptance: BLOCKED_DOWNLOAD
+Research window: 2018-01-01..2024-03-31; warmup 2017-07-01.
+Universe: SNAPSHOT_BASED_CSI300_RESEARCH_UNIVERSE; 76 snapshots, 22800 rows, 526 unique instruments; PIT effective intervals not validated.
+Session manager: refresh/reconnect/finite retry implemented; checkpoint resume enabled.
+Market download: 18/526 instruments complete raw+adjusted after resumable rerun; full panel not claimed.
+Qlib/Alpha158: blocked until complete panel exists.
+Tests: 9 passed; factor v1/v2/v3 baselines untouched.

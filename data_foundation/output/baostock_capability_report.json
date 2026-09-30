@@ -1,0 +1,110 @@
+{
+  "package": "baostock",
+  "credential_status": "not_required",
+  "login_error_code": "0",
+  "interfaces": {
+    "login": {
+      "status": "AVAILABLE"
+    },
+    "query_trade_dates": {
+      "status": "AVAILABLE",
+      "sample_row_count": 91,
+      "columns": [
+        "calendar_date",
+        "is_trading_day"
+      ],
+      "earliest_date": "2024-01-01",
+      "latest_date": "2024-03-31"
+    },
+    "query_stock_basic": {
+      "status": "AVAILABLE",
+      "sample_row_count": 1,
+      "columns": [
+        "code",
+        "code_name",
+        "ipoDate",
+        "outDate",
+        "type",
+        "status"
+      ],
+      "earliest_date": "1999-11-10",
+      "latest_date": "1999-11-10"
+    },
+    "query_all_stock": {
+      "status": "EMPTY",
+      "sample_row_count": 0,
+      "columns": []
+    },
+    "query_history_k_data_plus": {
+      "status": "AVAILABLE",
+      "sample_row_count": 58,
+      "columns": [
+        "date",
+        "code",
+        "open",
+        "high",
+        "low",
+        "close",
+        "preclose",
+        "volume",
+        "amount",
+        "adjustflag",
+        "turn",
+        "tradestatus",
+        "pctChg",
+        "isST"
+      ],
+      "earliest_date": "2024-01-02",
+      "latest_date": "2024-03-29"
+    },
+    "query_adjust_factor": {
+      "status": "EMPTY",
+      "sample_row_count": 0,
+      "columns": []
+    },
+    "query_hs300_stocks": {
+      "status": "AVAILABLE",
+      "sample_row_count": 300,
+      "columns": [
+        "updateDate",
+        "code",
+        "code_name"
+      ],
+      "earliest_date": "2024-03-25",
+      "latest_date": "2024-03-25"
+    },
+    "query_stock_industry": {
+      "status": "AVAILABLE",
+      "sample_row_count": 1,
+      "columns": [
+        "updateDate",
+        "code",
+        "code_name",
+        "industry",
+        "industryClassification"
+      ],
+      "earliest_date": "2024-03-25",
+      "latest_date": "2024-03-25"
+    },
+    "corporate_action": {
+      "status": "UNSUPPORTED",
+      "reason": "not exposed by the installed public API"
+    }
+  },
+  "historical_hs300_snapshots": {
+    "2020-03-31": {
+      "status": "AVAILABLE",
+      "rows": 300
+    },
+    "2022-03-31": {
+      "status": "AVAILABLE",
+      "rows": 300
+    },
+    "2024-03-31": {
+      "status": "AVAILABLE",
+      "rows": 300
+    }
+  },
+  "historical_membership_status": "HISTORICAL_SNAPSHOT_AVAILABLE",
+  "status": "PARTIAL"
+}

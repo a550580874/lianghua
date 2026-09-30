@@ -159,7 +159,7 @@ These figures reproduce one local run of sample data and are not investment advi
 - NumPy emitted `Mean of empty slice` during portfolio analysis.
 - Gym emitted its upstream unmaintained/NumPy 2.0 warning.
 - Optional CatBoost, XGBoost and PyTorch models were unavailable and skipped; they are not used by this LightGBM workflow.
-- The PoC working directory is not a Git repository, so Qlib's recorder could not capture `git diff`/`git status`.
+- At run time, the original PoC working directory was not a Git repository, so Qlib's recorder could not capture `git diff`/`git status`. Publishing these evidence files to the current Git repository afterward does not retroactively add that recorder metadata.
 - MLflow emitted repeated assistant hint messages; these did not affect results.
 
 ## 人工验收记录
@@ -168,7 +168,7 @@ These figures reproduce one local run of sample data and are not investment advi
 
 以下仅作为验收观察记录，不对 Qlib 做修复或核心代码修改：
 
-1. 当前 PoC 目录不是 Git repository，因此 Qlib Recorder 无法记录 `git diff` / `git status`。
+1. 人工验收运行时的原始 PoC 目录不是 Git repository，因此 Qlib Recorder 无法记录 `git diff` / `git status`；之后将证据发布到本 Git 仓库不会补回当时的 recorder metadata。
 2. CatBoost、XGBoost、PyTorch 是 optional dependency warning，不影响本次 LightGBM PoC。
 3. Sample data 存在 `$close` NaN，backtest 中出现 `Mean of empty slice` warning。
 4. 当前数据 calendar 截止 2021-06-11，因此本次收益指标不得解释为当前可交易策略表现。

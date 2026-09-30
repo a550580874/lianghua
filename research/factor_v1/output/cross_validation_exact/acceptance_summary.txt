@@ -1,0 +1,9 @@
+Factor Research Workflow v3.1 automatic acceptance: PASS
+Alphalens Reloaded: 0.4.6 (isolated Python 3.12.12 arm64 environment)
+Exact rank-IC groups: 60; MATCH: 60; IMPLEMENTATION_BUG: 0
+Quantile return exact rows: MATCH 302215; SEMANTIC_DIFFERENCE 390
+Turnover definition rows: EFFECTIVELY_EQUIVALENT 10892; SEMANTIC_DIFFERENCE 4347
+Exact detail outputs: generated; bounded deterministic detail extracts with complete aggregate calculations
+Forward-return alignment: generated for 3 splits x 4 horizons (factor=ALL)
+Baseline regression: PASS (v1/v2/v3 tracked outputs unchanged)
+Deterministic adapter tests: PASS (existing v3 suite plus exact timing coverage)

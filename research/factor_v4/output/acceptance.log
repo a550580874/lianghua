@@ -1,0 +1,6 @@
+Factor Research Workflow v4 acceptance
+status=BLOCKED_DOWNLOAD
+snapshot_history=76 snapshots; 22800 rows
+session_manager=refresh/reconnect/finite retry implemented
+market_download=18/526 complete raw+adjusted; resumable checkpoint
+panel_extraction=not_run

@@ -1,10 +1,16 @@
 # Quant Framework PoC
 
+> **Chinese documentation:** [README_ZH.md](README_ZH.md) — start here for a plain-language project overview, honest clone-to-run instructions, framework concepts, and known limitations.
+
 ## Scope and status
 
 This directory is an independent, evidence-first evaluation of open-source quant frameworks. It does not modify or import code from the adjacent `a-share-quant` project.
 
 Current gate: **AKQuant PoC human acceptance passed.** Qlib, RQAlpha and AKQuant have all completed their gated PoC acceptance runs.
+
+| Qlib 0.9.7 | RQAlpha 6.4.0 | AKQuant 0.3.61 |
+|---|---|---|
+| **PASS** | **PASS** | **PASS** |
 
 This is not a framework selection, ranking, investment recommendation, live-trading integration, or validation for use with real funds.
 
@@ -13,12 +19,14 @@ This is not a framework selection, ranking, investment recommendation, live-trad
 ```text
 .
 ├── README.md
+├── README_ZH.md                 # Chinese learning and usage guide
 ├── environment.md
 ├── configs/                   # Qlib workflow configuration
 ├── logs/                      # compact Qlib execution evidence
-├── results/                   # Qlib, RQAlpha and AKQuant evidence reports
+├── results/                   # framework evidence reports and usability-gap audit
 ├── scripts/                   # read-only verification helpers
 ├── qlib/                      # Qlib config, verifier and compact logs
+├── research/factor_v1/        # Alpha158 factor diagnostics (no strategy)
 ├── rqalpha/output/            # compact RQAlpha run/report artifacts
 └── akquant/output/            # compact AKQuant run/test artifacts
 ```
@@ -28,7 +36,9 @@ framework repositories are intentionally excluded from Git. Their pinned version
 official URLs and reproduction commands are recorded in `environment.md` and the
 framework reports under `results/`.
 
-Creating the assigned Multica issue automatically triggered a second C2 run during the earlier Qlib phase. Both Qlib runs used the same official Alpha158/CSI300 workflow and produced matching metrics. The `qlib/output/` set and `results/qlib.md` are the canonical Qlib artifacts; the root `logs/` and `mlruns/` set remains preserved. Qlib, RQAlpha and AKQuant subsequently passed their human acceptance gates. AKQuant work remains isolated from the other accepted environments.
+Creating the assigned Multica issue automatically triggered a second C2 run during the earlier Qlib phase. Both Qlib runs used the same official Alpha158/CSI300 workflow and produced matching metrics. The `qlib/output/` set and `results/qlib.md` are the canonical tracked Qlib evidence; the earlier root `logs/` set is also preserved. MLflow stores are intentionally excluded from Git. Qlib, RQAlpha and AKQuant subsequently passed their human acceptance gates. AKQuant work remains isolated from the other accepted environments.
+
+An important usability boundary: a fresh clone can inspect the committed reports, logs and RQAlpha exports, but cannot immediately rerun any full PoC because virtual environments, downloaded data/bundles, upstream source checkouts and official example files are not committed. See [README_ZH.md](README_ZH.md) and [results/usability_gap.md](results/usability_gap.md) before attempting reproduction.
 
 ## Qlib acceptance reproduction
 
@@ -110,9 +120,13 @@ See `results/akquant.md` for the copy-ready command block, exact expected output
 
 Human acceptance passed with exit code 0. The reproduced run matched the Agent baseline: two bars, three filled BUY orders, three open positions, CNY 15 total commission, end market value 4,870,549.04 and total return -2.589019%. This confirms reproducibility of the official quickstart only; the A-share-rule, fee, ETF subtype, suspension and remote-data boundaries documented in `results/akquant.md` remain unchanged.
 
+## Factor Research v1
+
+`research/factor_v1/` is a Qlib Alpha158 diagnostic workflow added after the three framework PoCs. It uses the official `ROC20`, `STD20`, `MA20`, `VSTD20` and `CORR20` outputs with the official forward-return label; it does not define a strategy, train a model or construct a portfolio. Run instructions, timing boundaries and output meanings are in [README_ZH.md](README_ZH.md#因子研究); generated summaries and the report are under `research/factor_v1/output/` after a local Qlib environment/data rebuild.
+
 ## Objective comparison table
 
-No total score, rank, or winner is assigned. “Not tested” means the required gated phase has not begun.
+No total score, rank, or winner is assigned. “Not established” or “not tested” means that capability was outside the evidence collected by the corresponding PoC; it does not mean a framework-wide absence.
 
 | Framework | Installability | Maintenance | A-share support | ETF support | PIT | Factor research | ML | Portfolio | Backtest | Execution | T+1 | Limit handling | Suspension | Cost model | Transfer fee | Documentation | Complexity |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|

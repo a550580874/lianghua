@@ -21,3 +21,18 @@ qlib-source/
 Users/
 **/Users/
 .DS_Store
+
+# Factor Research v1 raw intermediate
+research/factor_v1/output/factors.csv.gz
+data_foundation/output/parquet/
+data_foundation/output/raw/
+data_foundation/output/cache/
+*.parquet
+
+data_foundation/output/parquet_baostock/
+data_foundation/output/qlib_baostock_poc/bin/
+data_foundation/vendor/
+data_foundation/cache/
+data_foundation/output/alpha158_full/parquet/
+data_foundation/output/alpha158_full/qlib_bin/
+research/factor_v4/output/*.parquet

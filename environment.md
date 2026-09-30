@@ -44,7 +44,7 @@ The full package snapshot is in `qlib/output/requirements-freeze.txt`.
 - The PoC is at `outputs/quant-framework-poc`, alongside—not inside—`a-share-quant`.
 - No package was installed into `a-share-quant/.venv`.
 - `a-share-quant` is not a Git repository, so a Git before/after comparison is unavailable. No command in this PoC wrote to that directory.
-- Qlib and RQAlpha have passed human acceptance. AKQuant uses a third, independent environment and does not modify either accepted PoC.
+- Qlib, RQAlpha and AKQuant have all passed human acceptance. AKQuant uses a third, independent environment and does not modify either accepted PoC.
 
 ## RQAlpha environment
 

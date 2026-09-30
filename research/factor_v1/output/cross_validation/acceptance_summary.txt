@@ -1,0 +1,13 @@
+overall=PASS (oracle execution and outputs completed; differences are classified, not suppressed)
+alphalens_reloaded=0.4.6
+python=3.12.12
+adapter_tests=PASS 3/3
+rank_ic_rows=60
+rank_ic_status=DATA_ALIGNMENT_DIFFERENCE 60; MATCH 0; SEMANTIC_DIFFERENCE 0; ERROR 0
+quantile_rows=300
+quantile_status=DATA_ALIGNMENT_DIFFERENCE 300; MATCH 0; SEMANTIC_DIFFERENCE 0; ERROR 0
+turnover_rows=15
+turnover_status=SEMANTIC_DIFFERENCE 15; MATCH 0; ERROR 0
+baseline_regression=PASS (v1/v2 files unchanged)
+report=PASS
+known_oracle_limit=Alphalens date-frequency assumptions differ from the irregular observed China sample; no upstream patch applied.

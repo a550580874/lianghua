@@ -1,0 +1,13 @@
+factor_summary.csv: PASS rows=15
+factor_coverage.csv: PASS rows=15
+factor_rank_autocorrelation.csv: PASS rows=15
+factor_decay.csv: PASS rows=60
+factor_correlation.csv: PASS rows=150
+quantile_spread_stats.csv: PASS rows=15
+v1_regression_ic_mean: PASS
+v1_regression_rank_ic_mean: PASS
+v1_regression_q5_q1_spread: PASS
+v1_regression_top_quantile_turnover: PASS
+decay_horizons: PASS 1D,5D,10D,20D
+deterministic_tests: PASS 5/5
+overall: PASS

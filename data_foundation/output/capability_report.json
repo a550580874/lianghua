@@ -1,0 +1,58 @@
+{
+  "generated_at": "2026-09-29",
+  "platform": "macOS-15.6.1-arm64-arm-64bit-Mach-O",
+  "credential_status": "present",
+  "interfaces": {
+    "trade_cal": {
+      "status": "permission_denied",
+      "error_type": "Exception",
+      "message": "抱歉，您没有接口(trade_cal)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。"
+    },
+    "stock_basic": {
+      "status": "permission_denied",
+      "error_type": "Exception",
+      "message": "抱歉，您没有接口(stock_basic)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。"
+    },
+    "daily": {
+      "status": "permission_denied",
+      "error_type": "Exception",
+      "message": "抱歉，您没有接口(daily)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。"
+    },
+    "adj_factor": {
+      "status": "permission_denied",
+      "error_type": "Exception",
+      "message": "抱歉，您没有接口(adj_factor)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。"
+    },
+    "daily_basic": {
+      "status": "permission_denied",
+      "error_type": "Exception",
+      "message": "抱歉，您没有接口(daily_basic)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。"
+    },
+    "suspend_d": {
+      "status": "permission_denied",
+      "error_type": "Exception",
+      "message": "抱歉，您没有接口(suspend_d)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。"
+    },
+    "stk_limit": {
+      "status": "permission_denied",
+      "error_type": "Exception",
+      "message": "抱歉，您没有接口(stk_limit)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。"
+    },
+    "index_weight": {
+      "status": "permission_denied",
+      "error_type": "Exception",
+      "message": "抱歉，您没有接口(index_weight)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。"
+    },
+    "index_classify": {
+      "status": "permission_denied",
+      "error_type": "Exception",
+      "message": "抱歉，您没有接口(index_classify)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。"
+    },
+    "index_member_all": {
+      "status": "permission_denied",
+      "error_type": "Exception",
+      "message": "抱歉，您没有接口(index_member_all)访问权限，权限的具体详情访问：https://tushare.pro/document/1?doc_id=108。"
+    }
+  },
+  "status": "PARTIAL_PASS_PERMISSION_BLOCKED"
+}

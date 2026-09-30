@@ -1,0 +1,29 @@
+version: factor_v1
+provider_uri: qlib/data/cn_data
+region: cn
+universe: csi300
+frequency: day
+label:
+  name: forward_return
+  expression: "Ref($close, -2) / Ref($close, -1) - 1"
+timing:
+  information_cutoff: signal_time
+  signal_time: t
+  forward_return_period: t+1_to_t+2
+factors:
+  - ROC20
+  - STD20
+  - MA20
+  - VSTD20
+  - CORR20
+splits:
+  train:
+    start: "2008-01-01"
+    end: "2014-12-31"
+  validation:
+    start: "2015-01-01"
+    end: "2016-12-31"
+  test:
+    start: "2017-01-01"
+    end: "2020-08-01"
+quantiles: 5

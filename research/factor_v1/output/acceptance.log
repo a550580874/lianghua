@@ -1,0 +1,18 @@
+[98874:MainThread](2026-09-28 14:45:36,606) INFO - qlib.Initialization - [config.py:452] - default_conf: client.
+[98874:MainThread](2026-09-28 14:45:36,961) INFO - qlib.Initialization - [__init__.py:75] - qlib successfully initialized based on client settings.
+[98874:MainThread](2026-09-28 14:45:36,961) INFO - qlib.Initialization - [__init__.py:77] - data_path={'__DEFAULT_FREQ': PosixPath('/Users/ming-shen/Desktop/金融/2026-09-13/files-pasted-by-the-user-a/outputs/quant-framework-poc/qlib/data/cn_data')}
+[98874:MainThread](2026-09-28 14:45:51,737) INFO - qlib.timer - [log.py:127] - Time cost: 14.775s | Loading data Done
+[98874:MainThread](2026-09-28 14:45:52,068) INFO - qlib.timer - [log.py:127] - Time cost: 0.096s | DropnaLabel Done
+[98874:MainThread](2026-09-28 14:45:53,316) INFO - qlib.timer - [log.py:127] - Time cost: 1.248s | CSZScoreNorm Done
+[98874:MainThread](2026-09-28 14:45:53,333) INFO - qlib.timer - [log.py:127] - Time cost: 1.596s | fit & process data Done
+[98874:MainThread](2026-09-28 14:45:53,333) INFO - qlib.timer - [log.py:127] - Time cost: 16.372s | Init data Done
+wrote=/Users/ming-shen/multica_workspaces_desktop-api.multica.ai/mingwork-febe35602187/ming-9-e96868f48512/workdir/lianghua-target/research/factor_v1/output/factors.csv.gz
+rows=909996
+qlib_version=0.9.7
+label=Ref($close, -2)/Ref($close, -1) - 1
+splits=3
+factors=5
+summary=/Users/ming-shen/multica_workspaces_desktop-api.multica.ai/mingwork-febe35602187/ming-9-e96868f48512/workdir/lianghua-target/research/factor_v1/output/factor_summary.csv
+report=/Users/ming-shen/multica_workspaces_desktop-api.multica.ai/mingwork-febe35602187/ming-9-e96868f48512/workdir/lianghua-target/research/factor_v1/output/report.md
+report=/Users/ming-shen/multica_workspaces_desktop-api.multica.ai/mingwork-febe35602187/ming-9-e96868f48512/workdir/lianghua-target/research/factor_v1/output/report.md
+report=/Users/ming-shen/multica_workspaces_desktop-api.multica.ai/mingwork-febe35602187/ming-9-e96868f48512/workdir/lianghua-target/research/factor_v1/output/report.md

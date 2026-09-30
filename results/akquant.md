@@ -152,7 +152,7 @@ Evidence: <https://github.com/akfamily/akquant/blob/v0.3.61/src/execution/slippa
 
 ## Walk-forward
 
-Status: **IMPLEMENTED; NOT EXERCISED AS A STRATEGY RUN IN THIS STOP-GATED PHASE.**
+Status: **IMPLEMENTED; NOT EXERCISED AS A STRATEGY RUN IN THIS POC.**
 
 `python/akquant/optimize.py::run_walk_forward` constructs rolling train/test windows, runs grid search in-sample and backtests the selected parameters out-of-sample. Official documentation describes the API. `tests/test_walk_forward_kwargs.py` passed, proving grid-only arguments do not leak into the out-of-sample backtest; it is not a full empirical WFO validation.
 
