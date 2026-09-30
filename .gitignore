@@ -32,3 +32,7 @@ data_foundation/output/cache/
 data_foundation/output/parquet_baostock/
 data_foundation/output/qlib_baostock_poc/bin/
 data_foundation/vendor/
+data_foundation/cache/
+data_foundation/output/alpha158_full/parquet/
+data_foundation/output/alpha158_full/qlib_bin/
+research/factor_v4/output/*.parquet
