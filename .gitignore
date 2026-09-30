@@ -30,3 +30,5 @@ data_foundation/output/cache/
 *.parquet
 
 data_foundation/output/parquet_baostock/
+data_foundation/output/qlib_baostock_poc/bin/
+data_foundation/vendor/

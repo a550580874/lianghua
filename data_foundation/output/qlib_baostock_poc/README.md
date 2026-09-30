@@ -1,3 +1,3 @@
 # Qlib BaoStock compatibility
 
-Status: `BLOCKED_CONVERSION`. BaoStock raw parquet and an intermediate `daily_price_qlib.csv` are available for a two-security sample, but the official `scripts/dump_bin.py` and an installed Qlib package are absent from this checkout. No Qlib bin format was reimplemented or patched; `D.features()` and Alpha158 five-factor generation remain unvalidated.
+Status: `PASS_QLIB_COMPATIBILITY` with `VOLUME_SEMANTICS_PARTIAL`. Existing Qlib 0.9.7 and official v0.9.7 dump_bin generated the local binary dataset; the bin directory is gitignored. No Qlib format was reimplemented or patched.

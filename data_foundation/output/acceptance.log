@@ -1,10 +1,11 @@
 Data Foundation v1.2 acceptance
-status=BLOCKED_CONVERSION
+status=PASS_QLIB_COMPATIBILITY
 source=baostock 0.9.4
 window=2024-01-01..2024-03-31
 raw_rows=116
 hs300=historical snapshots available; effective intervals not inferred
 price_limit=missing; market_value=missing; adjustment=empty in sample
 adjustflag=1/2/3 queried; raw=3; adjusted=2; factor validation generated
-qlib_dump_bin=not_available; D.features=not_run; Alpha158=not_run
+qlib_runtime=0.9.7; dump_bin=PASS; source_tag=v0.9.7; commit=da920b7f954f48ab1bb64117c976710de198373e
+D.features=PASS; Alpha158=PASS; volume_semantics=PARTIAL
 tests=3 passed

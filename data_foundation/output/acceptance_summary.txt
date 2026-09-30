@@ -1,4 +1,4 @@
-Data Foundation v1.2 automatic acceptance: BLOCKED_CONVERSION
+Data Foundation v1.2 automatic acceptance: PASS_QLIB_COMPATIBILITY
 BaoStock capability: PARTIAL (login/calendar/security/raw K-line/industry available; adjustment empty; all_stock empty on probe date; corporate action unsupported).
 Tushare: preserved as PERMISSION_DENIED; no new Tushare probe or fallback.
 Download: 2024-01-01..2024-03-31, 116 raw K-line rows for fixed sample sh.600000/sz.000001.
@@ -7,6 +7,7 @@ Trading status/ST: PARTIAL/AVAILABLE (`tradestatus=1`, `isST=0` in sample); no r
 CSI300: HISTORICAL_SNAPSHOT_AVAILABLE; snapshots vary and expose updateDate, but no effective interval inferred.
 Price limits: PRICE_LIMIT_SOURCE_MISSING. Market value: MARKET_VALUE_SOURCE_MISSING.
 adjustflag probe: 1/2/3 returned distinct series; raw=3, research adjusted=2; factor=adjusted_close/raw_close validated with consistent OHLC ratios.
-Qlib dump_bin/D.features/Alpha158: BLOCKED_CONVERSION because official dump_bin.py and Qlib package are absent from checkout; no format reimplementation or source patch.
-2020 overlap: BLOCKED_INPUT because Qlib conversion is unavailable.
+Qlib dump_bin: PASS using existing Qlib 0.9.7 and official v0.9.7 commit da920b7f954f48ab1bb64117c976710de198373e. D.features: PASS (116x6). Alpha158: PASS (116x158; five requested columns present).
+Volume semantics: VOLUME_SEMANTICS_PARTIAL.
+2020 overlap: not run.
 Deterministic tests: 3/3 PASS in isolated data_foundation/.venv.
